@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, ShieldCheck, Map, Activity, PhoneCall, TrendingDown, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Map, Activity, PhoneCall, TrendingDown, Zap, AlertTriangle, Eye, PlayCircle } from "lucide-react";
 
 const Index = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -314,6 +314,62 @@ const Index = () => {
                 />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Educação e Estratégia B2B (Meio de Funil) */}
+      <section id="educacao-b2b" className="py-24 bg-slate-900 border-t border-slate-800 relative overflow-hidden">
+        {/* Abstract Background */}
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-600/5 rounded-full blur-[120px] pointer-events-none" />
+        
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-blue-500 font-bold tracking-widest uppercase text-xs mb-3 block">Conteúdo Estratégico para Gestores</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">O que você precisa saber para <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">não perder dinheiro.</span></h2>
+            <p className="text-lg text-slate-400 font-light">Informação e inteligência prática para donos de frota e gerentes de operação logística pesada.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Videocast / Article 1 */}
+            <div className="bg-slate-950 border border-slate-800 rounded-3xl p-8 hover:border-blue-500/50 hover:bg-slate-900/80 transition-all duration-300 shadow-xl group cursor-pointer relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[40px] -translate-y-1/2 translate-x-1/2 group-hover:bg-red-500/20 transition-all duration-500" />
+              <div className="w-14 h-14 bg-blue-500/10 border border-blue-500/20 rounded-2xl flex items-center justify-center text-red-400 mb-6 group-hover:scale-110 transition-transform duration-500">
+                <AlertTriangle className="w-7 h-7" />
+              </div>
+              <h4 className="text-xl font-bold text-slate-100 mb-4 group-hover:text-blue-400 transition-colors">3 erros que fazem sua frota dar prejuízo</h4>
+              <p className="text-slate-400 font-light text-sm mb-8 leading-relaxed">Conteúdo técnico leve detalhando as falhas operacionais ocultas que consomem a margem de lucro de milhares de frotistas.</p>
+              <div className="flex items-center gap-2 text-xs font-bold text-cyan-500 uppercase tracking-wider mt-auto">
+                <PlayCircle className="w-4 h-4" /> Assistir Análise
+              </div>
+            </div>
+            
+            {/* Videocast / Article 2 */}
+            <div className="bg-slate-950 border border-slate-800 rounded-3xl p-8 hover:border-blue-500/50 hover:bg-slate-900/80 transition-all duration-300 shadow-xl group cursor-pointer relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-[40px] -translate-y-1/2 translate-x-1/2 group-hover:bg-cyan-500/20 transition-all duration-500" />
+              <div className="w-14 h-14 bg-blue-500/10 border border-blue-500/20 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform duration-500">
+                <Eye className="w-7 h-7" />
+              </div>
+              <h4 className="text-xl font-bold text-slate-100 mb-4 group-hover:text-blue-400 transition-colors">Como saber se seu motorista está sendo imprudente</h4>
+              <p className="text-slate-400 font-light text-sm mb-8 leading-relaxed">Como ler os sinais de fadiga e desvios de conduta através da telemetria antes que se tornem um acidente irreversível.</p>
+              <div className="flex items-center gap-2 text-xs font-bold text-cyan-500 uppercase tracking-wider mt-auto">
+                <PlayCircle className="w-4 h-4" /> Assistir Análise
+              </div>
+            </div>
+            
+            {/* Videocast / Article 3 */}
+            <div className="bg-slate-950 border border-slate-800 rounded-3xl p-8 hover:border-blue-500/50 hover:bg-slate-900/80 transition-all duration-300 shadow-xl group cursor-pointer relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-[40px] -translate-y-1/2 translate-x-1/2 group-hover:bg-emerald-500/20 transition-all duration-500" />
+              <div className="w-14 h-14 bg-blue-500/10 border border-blue-500/20 rounded-2xl flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform duration-500">
+                <ShieldCheck className="w-7 h-7" />
+              </div>
+              <h4 className="text-xl font-bold text-slate-100 mb-4 group-hover:text-blue-400 transition-colors">Evitando multas com controle em tempo real</h4>
+              <p className="text-slate-400 font-light text-sm mb-8 leading-relaxed">Insights práticos de como operações pesadas estão zerando reprovações e sinistros ao usar nossa inteligência embarcada.</p>
+              <div className="flex items-center gap-2 text-xs font-bold text-cyan-500 uppercase tracking-wider mt-auto">
+                <PlayCircle className="w-4 h-4" /> Assistir Análise
+              </div>
+            </div>
           </div>
         </div>
       </section>
