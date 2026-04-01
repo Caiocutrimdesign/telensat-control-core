@@ -1,6 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, ShieldCheck, Map, Activity, PhoneCall, TrendingDown, Zap, AlertTriangle, Eye, PlayCircle, Menu, X, Thermometer, UserCheck, Satellite, PackageOpen, Truck, FileCheck, Brain, Globe2 } from "lucide-react";
+import { 
+  ArrowRight, CheckCircle2, ShieldCheck, Map, Activity, PhoneCall, TrendingDown, Zap, AlertTriangle, Eye, PlayCircle, Menu, X, Thermometer, UserCheck, Satellite, PackageOpen, Truck, FileCheck, Brain, Globe2, ChevronRight, Info, ExternalLink, Cpu, Globe, Database, Lock
+} from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { motion, AnimatePresence } from "framer-motion";
 
 type Language = "pt" | "en" | "es";
 
@@ -70,10 +80,21 @@ const translations = {
   }
 };
 
+const ecosystemServices = [
+  { id: 1, title: "Acionamento de Plataforma", icon: Truck, shortDesc: "Monitoramento e relatórios precisos de data, local e horário de uso da plataforma guincho.", img: "https://www.telensat.com.br/images/jpg/servicos/1.jpg", specs: ["Monitoramento 24/7", "Relatórios em tempo real", "Alerta de uso indevido"], details: "Sistema de monitoramento avançado para plataformas guincho, garantindo total visibilidade sobre o uso do equipamento e prevenindo desvios operacionais." },
+  { id: 2, title: "Porta Baú Inteligente", icon: PackageOpen, shortDesc: "Identificação imediata de abertura de portas de baú ou utilitários, erradicando surpresas em rota.", img: "https://www.telensat.com.br/images/jpg/servicos/2.jpg", specs: ["Sensor magnético de alta precisão", "Alerta de abertura em local não autorizado", "Registro de eventos"], details: "Tecnologia de sensoriamento para baús, permitindo o controle total sobre a integridade da carga e prevenindo aberturas não autorizadas durante o trajeto." },
+  { id: 3, title: "Gestão de Refrigeração", icon: Thermometer, shortDesc: "Monitoramento termométrico em tempo real com alertas de variação por tela e SMS.", img: "https://www.telensat.com.br/images/jpg/servicos/3.jpg", specs: ["Monitoramento contínuo", "Alertas de variação térmica", "Relatórios de conformidade"], details: "Solução completa para transporte de carga perecível, garantindo que a temperatura se mantenha dentro dos parâmetros exigidos durante toda a operação." },
+  { id: 4, title: "Identificador RF-ID", icon: UserCheck, shortDesc: "Acesso restrito via Ibuttons ou Smart Card, gerando relatórios completos por motorista.", img: "https://www.telensat.com.br/images/jpg/servicos/4.jpg", specs: ["Autenticação biométrica/RFID", "Controle de jornada", "Relatórios por condutor"], details: "Sistema de identificação de condutores que garante que apenas motoristas autorizados operem os veículos, otimizando a gestão de jornada e segurança." },
+  { id: 5, title: "Sistema Monitriip ANTT", icon: FileCheck, shortDesc: "Homologado para envio em tempo real de dados para monitoramento interestadual.", img: "https://www.telensat.com.br/images/jpg/servicos/5.jpg", specs: ["Homologação ANTT", "Envio automático de dados", "Conformidade legal"], details: "Solução homologada para o envio de dados ao sistema Monitriip da ANTT, garantindo conformidade total com as exigências regulatórias para transporte interestadual." },
+  { id: 6, title: "Sensor IA de Fadiga", icon: Brain, shortDesc: "Identificação de distração, sono ou falar ao celular com alertas sonoros e visuais na cabine.", img: "https://www.telensat.com.br/images/jpg/servicos/6.jpg", specs: ["IA de visão computacional", "Alertas em tempo real", "Análise de comportamento"], details: "Tecnologia de ponta que utiliza inteligência artificial para monitorar o comportamento do motorista, prevenindo acidentes causados por fadiga ou distração." },
+  { id: 7, title: "Comunicação Satelital", icon: Satellite, shortDesc: "Cobertura absoluta para veículos, barcos e máquinas agrícolas imunes a Jammer em toda LA.", img: "https://www.telensat.com.br/images/jpg/servicos/7.jpg", specs: ["100% Satelital", "Imune a Jammer", "Cobertura global"], details: "Solução de comunicação via satélite para operações em áreas remotas, garantindo conectividade ininterrupta e segurança contra bloqueadores de sinal (Jammers).", color: "accent" }
+];
+
 const Index = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lang, setLang] = useState<Language>("pt");
+  const [selectedService, setSelectedService] = useState<typeof ecosystemServices[0] | null>(null);
 
   const t = (key: keyof typeof translations.pt) => translations[lang][key];
 
@@ -91,7 +112,6 @@ const Index = () => {
       {/* Topbar (Informational) */}
       <div className={`fixed top-0 w-full z-[60] bg-white/95 backdrop-blur-md text-slate-700 py-1 px-4 hidden md:flex items-center justify-between text-[11px] font-semibold tracking-wider uppercase transition-transform duration-300 ${scrolled ? '-translate-y-full' : 'translate-y-0 shadow-sm border-b border-slate-100'}`}>
         <div className="flex gap-8 items-center max-w-7xl mx-auto w-full">
-          {/* Contatos */}
           <div className="flex items-center gap-6 flex-1">
             <div className="flex items-center gap-1.5">
               <PhoneCall className="w-3.5 h-3.5 text-brand-primary" />
@@ -104,7 +124,6 @@ const Index = () => {
             </div>
           </div>
           
-          {/* Botão Rastreio & Idiomas */}
           <div className="flex items-center gap-4">
             <a href="#" className="bg-brand-primary text-white hover:bg-brand-primary/90 px-4 py-1 rounded-full flex items-center gap-2 transition shadow-sm drop-shadow-md font-extrabold text-[10px]">
               <Map className="w-3 h-3" />
@@ -147,7 +166,6 @@ const Index = () => {
             {t('contact')}
           </a>
 
-          {/* Mobile Toggle */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 focus:outline-none relative z-50 transition-colors text-brand-secondary"
@@ -156,7 +174,6 @@ const Index = () => {
           </button>
         </div>
 
-        {/* Mobile Menu Dropdown */}
         <div className={`md:hidden fixed inset-0 top-0 pt-28 bg-white/95 backdrop-blur-xl z-40 transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="px-6 py-8 flex flex-col gap-8 items-center text-center">
             <a onClick={() => setMobileMenuOpen(false)} href="#problema" className="text-xl font-bold text-brand-secondary hover:text-brand-primary uppercase tracking-widest">{t('challenges')}</a>
@@ -174,7 +191,6 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative pt-[90px] md:pt-[110px] pb-12 md:pb-20 bg-brand-neutral flex flex-col justify-center min-h-[75vh]">
-        {/* Ticker Informativo - Abaixo do Menu, rola com a página */}
         <div className="relative w-full z-40 bg-brand-primary text-white overflow-hidden flex border-y border-brand-primary/20 shadow-lg mb-12">
           <div className="animate-marquee whitespace-nowrap flex w-max items-center py-3 hover:[animation-play-state:paused] ease-linear text-[10px] md:text-[11px] font-black tracking-widest uppercase">
             {[...Array(3)].map((_, i) => (
@@ -190,17 +206,13 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="absolute inset-0 z-0 bg-slate-100 overflow-hidden mt-[120px] md:mt-[145px]"> {/* mt applied to not overlap ticker visually */}
-           {/* Light futuristic Grid overlay */}
+        <div className="absolute inset-0 z-0 bg-slate-100 overflow-hidden mt-[120px] md:mt-[145px]">
            <div className="absolute inset-0 bg-[linear-gradient(to_right,#004A9910_1px,transparent_1px),linear-gradient(to_bottom,#004A9910_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] z-30 pointer-events-none" />
            <div className="absolute inset-0 bg-gradient-to-r from-brand-neutral/95 via-brand-neutral/60 to-transparent z-20" />
            <div className="absolute inset-0 bg-gradient-to-t from-brand-neutral via-transparent to-brand-neutral/10 z-20" />
-           
-           {/* Ambient Glows Light */}
            <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[120px] pointer-events-none z-20 animate-pulse-glow" />
            <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[150px] pointer-events-none z-20" />
 
-           {/* Local Video Background - As requested */}
            <video 
              autoPlay 
              loop 
@@ -215,16 +227,13 @@ const Index = () => {
         
         <div className="container relative z-30 mx-auto px-6 max-w-7xl animate-fade-in mt-8 flex-1 flex flex-col justify-center">
           <div className="max-w-4xl">
-            
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-brand-secondary leading-tight tracking-tighter mb-6 drop-shadow-sm">
               {t('heroTitle1')} <br className="hidden md:block"/>
               <span className="text-brand-primary">{t('heroTitle2')}</span>
             </h1>
-            
             <p className="text-lg md:text-xl text-slate-800 font-medium mb-8 max-w-2xl leading-relaxed border-l-4 border-brand-primary pl-6 bg-white/70 backdrop-blur-md rounded-r-2xl py-4 shadow-sm">
               {t('heroDesc')}
             </p>
-            
             <div className="flex flex-col sm:flex-row gap-5 items-start">
               <a 
                 href="https://wa.me/559891293421?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20da%20minha%20opera%C3%A7%C3%A3o." 
@@ -245,7 +254,6 @@ const Index = () => {
                 {t('valetech')}
               </a>
             </div>
-            
             <div className="mt-12 flex items-center gap-6 text-sm text-slate-500 border-t border-slate-200 pt-8 pointer-events-auto">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-brand-primary" />
@@ -280,21 +288,6 @@ const Index = () => {
               "https://www.telensat.com.br/images/png/parceiros/valeteck.png",
               "https://www.telensat.com.br/images/png/parceiros/virtualx.png",
               "https://www.telensat.com.br/images/png/parceiros/wms.png",
-              "https://www.telensat.com.br/images/png/parceiros/cedro.png",
-              "https://www.telensat.com.br/images/png/parceiros/eneva.png",
-              "https://www.telensat.com.br/images/png/parceiros/ght.png",
-              "https://www.telensat.com.br/images/png/parceiros/gmconsultoria.png",
-              "https://www.telensat.com.br/images/png/parceiros/grupo-equatorial.png",
-              "https://www.telensat.com.br/images/png/parceiros/hg.png",
-              "https://www.telensat.com.br/images/png/parceiros/ppl.png",
-              "https://www.telensat.com.br/images/png/parceiros/silva-sales.png",
-              "https://www.telensat.com.br/images/png/parceiros/tecnocar.png",
-              "https://www.telensat.com.br/images/png/parceiros/texeira-duarte.png",
-              "https://www.telensat.com.br/images/png/parceiros/tsa.png",
-              "https://www.telensat.com.br/images/png/parceiros/vale.png",
-              "https://www.telensat.com.br/images/png/parceiros/valeteck.png",
-              "https://www.telensat.com.br/images/png/parceiros/virtualx.png",
-              "https://www.telensat.com.br/images/png/parceiros/wms.png",
             ].map((src, i) => (
               <img
                 key={`logo-${i}`}
@@ -307,7 +300,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Ecossistema de Ponta a Ponta - Refactored */}
+      {/* Ecossistema de Ponta a Ponta */}
       <section id="ecossistema" className="py-20 bg-brand-neutral relative border-b border-slate-200 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[150px] pointer-events-none" />
         
@@ -322,126 +315,169 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Compact Premium Grid of Services */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            
-            {/* 1. Plataforma */}
-            <div className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center hover:-translate-y-2 overflow-hidden relative">
-              <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-50 rounded-full blur-2xl group-hover:bg-blue-100 transition-colors duration-500" />
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform duration-500 border border-blue-100">
-                <Truck className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-brand-secondary mb-3 tracking-tight">Acionamento de Plataforma</h3>
-              <p className="text-slate-600 text-sm leading-relaxed font-normal">Monitoramento e relatórios precisos de data, local e horário de uso da plataforma guincho.</p>
-              <div className="mt-auto pt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/1.jpg" className="w-full h-32 object-cover rounded-xl shadow-inner border border-slate-100" alt="Plataforma" />
-              </div>
-            </div>
-
-            {/* 2. Porta Baú */}
-            <div className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center hover:-translate-y-2 overflow-hidden relative">
-              <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-50 rounded-full blur-2xl group-hover:bg-blue-100 transition-colors duration-500" />
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform duration-500 border border-blue-100">
-                <PackageOpen className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-brand-secondary mb-3 tracking-tight">Porta Baú Inteligente</h3>
-              <p className="text-slate-600 text-sm leading-relaxed font-normal">Identificação imediata de abertura de portas de baú ou utilitários, erradicando surpresas em rota.</p>
-              <div className="mt-auto pt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/2.jpg" className="w-full h-32 object-cover rounded-xl shadow-inner border border-slate-100" alt="Porta Bau" />
-              </div>
-            </div>
-
-            {/* 3. Temperatura */}
-            <div className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center hover:-translate-y-2 overflow-hidden relative">
-              <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-50 rounded-full blur-2xl group-hover:bg-blue-100 transition-colors duration-500" />
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform duration-500 border border-blue-100">
-                <Thermometer className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-brand-secondary mb-3 tracking-tight">Gestão de Refrigeração</h3>
-              <p className="text-slate-600 text-sm leading-relaxed font-normal">Monitoramento termométrico em tempo real com alertas de variação por tela e SMS.</p>
-              <div className="mt-auto pt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/3.jpg" className="w-full h-32 object-cover rounded-xl shadow-inner border border-slate-100" alt="Temperatura" />
-              </div>
-            </div>
-
-            {/* 4. Identificador */}
-            <div className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center hover:-translate-y-2 overflow-hidden relative">
-              <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-50 rounded-full blur-2xl group-hover:bg-blue-100 transition-colors duration-500" />
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform duration-500 border border-blue-100">
-                <UserCheck className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-brand-secondary mb-3 tracking-tight">Identificador RF-ID</h3>
-              <p className="text-slate-600 text-sm leading-relaxed font-normal">Acesso restrito via Ibuttons ou Smart Card, gerando relatórios completos por motorista.</p>
-              <div className="mt-auto pt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/4.jpg" className="w-full h-32 object-cover rounded-xl shadow-inner border border-slate-100" alt="Motorista" />
-              </div>
-            </div>
-
-            {/* 5. Monitriip */}
-            <div className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center hover:-translate-y-2 overflow-hidden relative">
-              <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-50 rounded-full blur-2xl group-hover:bg-blue-100 transition-colors duration-500" />
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform duration-500 border border-blue-100">
-                <FileCheck className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-brand-secondary mb-3 tracking-tight">Sistema Monitriip ANTT</h3>
-              <p className="text-slate-600 text-sm leading-relaxed font-normal">Homologado para envio em tempo real de dados para monitoramento interestadual.</p>
-              <div className="mt-auto pt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/5.jpg" className="w-full h-32 object-cover rounded-xl shadow-inner border border-slate-100" alt="ANTT" />
-              </div>
-            </div>
-
-            {/* 6. Sensor de Fadiga */}
-            <div className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center hover:-translate-y-2 overflow-hidden relative">
-              <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-50 rounded-full blur-2xl group-hover:bg-blue-100 transition-colors duration-500" />
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform duration-500 border border-blue-100">
-                <Brain className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-brand-secondary mb-3 tracking-tight">Sensor IA de Fadiga</h3>
-              <p className="text-slate-600 text-sm leading-relaxed font-normal">Identificação de distração, sono ou falar ao celular com alertas sonoros e visuais na cabine.</p>
-              <div className="mt-auto pt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/6.jpg" className="w-full h-32 object-cover rounded-xl shadow-inner border border-slate-100" alt="IA" />
-              </div>
-            </div>
-
-            {/* 7. SmartOne C & Satellite Integration */}
-            {/* 7. SmartOne C & Satellite Integration - Improved Visibility */}
-            <div className="group bg-brand-primary rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-brand-primary/40 transition-all duration-500 border border-blue-800 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 sm:col-span-2 lg:col-span-2 overflow-hidden relative">
-              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/15 transition-all duration-700 pointer-events-none" />
-              
-              <div className="flex-1 text-center lg:text-left z-10">
-                <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-500 border border-white/20 mx-auto lg:mx-0">
-                  <Satellite className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">Comunicação Satelital</h3>
-                <p className="text-blue-100 text-base leading-relaxed font-light mb-8 max-w-md">Cobertura absoluta para veículos, barcos e máquinas agrícolas imunes a Jammer em toda LA.</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full text-white text-[11px] uppercase font-black tracking-widest">
-                  <div className="flex items-center gap-3 bg-blue-900/50 p-3 rounded-lg border border-blue-800"><CheckCircle2 className="w-4 h-4 text-blue-300" /> 100% Satelital</div>
-                  <div className="flex items-center gap-3 bg-blue-900/50 p-3 rounded-lg border border-blue-800"><CheckCircle2 className="w-4 h-4 text-blue-300" /> Imune a Jammer</div>
-                </div>
-              </div>
-
-              <div className="flex-1 w-full lg:w-1/2 h-64 lg:h-80 relative z-10 transition-all duration-700 group-hover:scale-105">
-                <div className="absolute inset-0 bg-blue-900/30 rounded-2xl blur-3xl opacity-50 group-hover:opacity-70 transition-opacity" />
-                <img 
-                  src="https://www.telensat.com.br/images/jpg/servicos/7.jpg" 
-                  className="w-full h-full object-contain object-center rounded-2xl drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-700" 
-                  alt="Satelite SmartOne C" 
-                />
-                <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/10 text-center text-[10px] text-blue-100 uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity">
-                  SmartOne C - Tecnologia Satelital
-                </div>
-              </div>
-            </div>
+            {ecosystemServices.map((service, idx) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                onClick={() => setSelectedService(service)}
+                className={`group cursor-pointer rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border overflow-hidden relative flex flex-col items-center text-center 
+                  ${service.color === 'accent' ? 'bg-brand-primary border-blue-800 lg:col-span-2' : 'bg-white border-slate-100'}`}
+              >
+                {service.color === 'accent' ? (
+                  <>
+                    <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/15 transition-all duration-700 pointer-events-none" />
+                    <div className="flex flex-col lg:flex-row items-center gap-8 w-full z-10">
+                      <div className="flex-1 text-center lg:text-left">
+                        <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-white mb-6 border border-white/20 mx-auto lg:mx-0">
+                          <service.icon className="w-8 h-8" />
+                        </div>
+                        <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-tight">{service.title}</h3>
+                        <p className="text-blue-100 text-sm leading-relaxed font-light mb-6">{service.shortDesc}</p>
+                        <div className="flex items-center gap-2 text-xs font-bold text-white/80 uppercase tracking-widest bg-white/10 backdrop-blur-md rounded-full px-4 py-2 w-fit mx-auto lg:mx-0">
+                          <Info className="w-4 h-4" /> Ver Detalhes Técnicos
+                        </div>
+                      </div>
+                      <div className="flex-1 w-full lg:w-1/2 h-40 lg:h-48 relative">
+                        <img src={service.img} className="w-full h-full object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]" alt={service.title} />
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-50 rounded-full blur-2xl group-hover:bg-blue-100 transition-colors duration-500" />
+                    <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 border border-blue-100 group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
+                      <service.icon className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-xl font-bold text-brand-secondary mb-3 tracking-tight">{service.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed font-normal mb-6">{service.shortDesc}</p>
+                    <div className="mt-auto w-full">
+                      <div className="h-32 w-full overflow-hidden rounded-xl border border-slate-100 mb-4 group-hover:border-brand-primary/30 transition-colors">
+                        <img src={service.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={service.title} />
+                      </div>
+                      <div className="flex items-center justify-center gap-2 text-[10px] font-bold text-brand-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                        Saiba mais <ChevronRight className="w-3 h-3" />
+                      </div>
+                    </div>
+                  </>
+                )}
+              </motion.div>
+            ))}
           </div>
         </div>
+
+        <Dialog open={!!selectedService} onOpenChange={(open) => !open && setSelectedService(null)}>
+          <DialogContent className="max-w-4xl p-0 overflow-hidden bg-white border-0 rounded-3xl shadow-2xl">
+            <AnimatePresence>
+              {selectedService && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  className="flex flex-col md:flex-row h-full max-h-[90vh] overflow-y-auto"
+                >
+                  <div className="md:w-1/2 bg-brand-neutral/50 p-10 flex flex-col items-center justify-center relative overflow-hidden border-b md:border-b-0 md:border-r border-slate-100">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-primary to-blue-400" />
+                    <div className="relative group w-full max-w-sm">
+                      <div className="absolute inset-0 bg-brand-primary/10 rounded-3xl blur-3xl opacity-50" />
+                      <img 
+                        src={selectedService.img} 
+                        alt={selectedService.title} 
+                        className="relative z-10 w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" 
+                      />
+                    </div>
+                    <div className="mt-12 w-full space-y-4">
+                      <h4 className="text-xs font-black text-brand-primary uppercase tracking-[0.2em] text-center md:text-left">Especificações Técnicas</h4>
+                      <div className="grid grid-cols-1 gap-2">
+                        {selectedService.specs.map((spec, i) => (
+                          <div key={i} className="flex items-center gap-3 bg-white p-3 rounded-xl border border-slate-100 shadow-sm">
+                            <CheckCircle2 className="w-4 h-4 text-brand-primary" />
+                            <span className="text-sm font-semibold text-brand-secondary">{spec}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="md:w-1/2 p-10 md:p-14 bg-white">
+                    <DialogHeader className="mb-8">
+                      <div className="flex items-center gap-3 text-brand-primary font-bold mb-4">
+                        <selectedService.icon className="w-6 h-6 border-b-2 border-brand-primary pb-1" />
+                        <span className="text-xs uppercase tracking-widest">Documentação Técnica</span>
+                      </div>
+                      <DialogTitle className="text-3xl md:text-4xl font-extrabold text-brand-secondary tracking-tight leading-tight mb-4">
+                        {selectedService.title}
+                      </DialogTitle>
+                      <DialogDescription className="text-lg text-slate-500 font-light leading-relaxed">
+                        Solução integrada de alta precisão para operações logísticas críticas.
+                      </DialogDescription>
+                    </DialogHeader>
+
+                    <div className="space-y-8">
+                      <div className="prose prose-slate prose-lg max-w-none">
+                        <p className="text-slate-700 leading-relaxed font-light">
+                          {selectedService.details}
+                        </p>
+                      </div>
+
+                      <div className="pt-8 border-t border-slate-100 flex flex-col gap-6">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="flex flex-col gap-1 p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <div className="flex items-center gap-2 text-brand-primary">
+                              <Cpu className="w-4 h-4" />
+                              <span className="text-[10px] font-black uppercase tracking-widest">Hardware</span>
+                            </div>
+                            <span className="text-xs font-medium text-slate-600">Embarcado</span>
+                          </div>
+                          <div className="flex flex-col gap-1 p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <div className="flex items-center gap-2 text-brand-primary">
+                              <Globe className="w-4 h-4" />
+                              <span className="text-[10px] font-black uppercase tracking-widest">Cloud</span>
+                            </div>
+                            <span className="text-xs font-medium text-slate-600">Tempo Real</span>
+                          </div>
+                          <div className="flex flex-col gap-1 p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <div className="flex items-center gap-2 text-brand-primary">
+                              <Database className="w-4 h-4" />
+                              <span className="text-[10px] font-black uppercase tracking-widest">Backup</span>
+                            </div>
+                            <span className="text-xs font-medium text-slate-600">12 Meses</span>
+                          </div>
+                          <div className="flex flex-col gap-1 p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <div className="flex items-center gap-2 text-brand-primary">
+                              <Lock className="w-4 h-4" />
+                              <span className="text-[10px] font-black uppercase tracking-widest">Segurança</span>
+                            </div>
+                            <span className="text-xs font-medium text-slate-600">Nível Bancário</span>
+                          </div>
+                        </div>
+
+                        <a 
+                          href="https://wa.me/559891293421"
+                          className="w-full py-5 bg-brand-primary text-white rounded-2xl font-bold text-lg hover:bg-brand-secondary transition-all duration-300 shadow-xl shadow-brand-primary/20 flex items-center justify-center gap-3 group"
+                        >
+                          Solicitar Diagnóstico Técnico
+                          <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </DialogContent>
+        </Dialog>
       </section>
 
       {/* Problem Section */}
       <section id="problema" className="py-24 relative bg-white text-brand-secondary border-b border-slate-100">
         {/* Clean background */}
         <div className="absolute inset-0 bg-gradient-to-br from-brand-neutral to-white z-0" />
-        <div className="absolute inset-0 z-0 opacity-[0.03] mix-blend-multiply">
-           <img src="https://www.telensat.com.br/images/jpg/explicativo.jpg" alt="Desafios logisticos" className="w-full h-full object-cover object-center grayscale" />
+        <div className="absolute inset-0 z-0 opacity-10 mix-blend-overlay">
+           <img src="/images/logistics_bg.png" alt="Desafios logisticos" className="w-full h-full object-cover object-center grayscale brightness-50" />
         </div>
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-20">
