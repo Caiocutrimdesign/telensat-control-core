@@ -97,12 +97,7 @@ const Index = () => {
       </section>
 
       {/* Clientes Parceiros Ticker */}
-      <section className="py-3 border-y border-slate-800/50 bg-slate-950/80 backdrop-blur-2xl overflow-hidden relative z-40 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-        <div className="container mx-auto px-4 max-w-7xl mb-2 flex justify-center items-center gap-4 text-center">
-          <div className="h-px bg-slate-800 flex-1 hidden md:block"></div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-cyan-500/80">Operação Aprovada em Parceiros Ouro</p>
-          <div className="h-px bg-slate-800 flex-1 hidden md:block"></div>
-        </div>
+      <section className="py-4 border-y border-slate-800/50 bg-slate-950/80 backdrop-blur-2xl overflow-hidden relative z-40 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
         <div className="relative flex overflow-x-hidden group">
           <div className="animate-marquee whitespace-nowrap flex items-center py-2">
             {[
@@ -126,7 +121,7 @@ const Index = () => {
                 key={i}
                 src={src}
                 alt="Parceiro"
-                className="h-7 md:h-8 w-auto min-w-[100px] max-w-[120px] object-contain flex-shrink-0 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 mx-6 filter brightness-200 contrast-125"
+                className="h-8 md:h-10 w-auto min-w-[100px] max-w-[130px] object-contain flex-shrink-0 opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all duration-300 mx-6"
               />
             ))}
           </div>
@@ -153,7 +148,7 @@ const Index = () => {
                 key={`dup-${i}`}
                 src={src}
                 alt="Parceiro"
-                className="h-7 md:h-8 w-auto min-w-[100px] max-w-[120px] object-contain flex-shrink-0 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 mx-6 filter brightness-200 contrast-125"
+                className="h-8 md:h-10 w-auto min-w-[100px] max-w-[130px] object-contain flex-shrink-0 opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all duration-300 mx-6"
               />
             ))}
           </div>
@@ -269,6 +264,41 @@ const Index = () => {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Galeria de Serviços / Estrutura Técnica */}
+      <section id="galeria" className="py-24 bg-slate-900 relative border-t border-slate-800 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[600px] bg-cyan-600/5 rounded-full blur-[150px] pointer-events-none" />
+        <div className="container mx-auto px-6 max-w-7xl relative z-10 text-center mb-16">
+          <span className="text-cyan-500 font-bold tracking-widest uppercase text-xs mb-3 block">Galeria Técnica</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">Estrutura de ponta a ponta.</h2>
+          <p className="text-lg text-slate-400 font-light max-w-2xl mx-auto">Equipe própria, qualificação avançada e laboratório técnico para garantir a máxima disponibilidade da frota e do sensoriamento.</p>
+        </div>
+        
+        {/* Horizontal scroll gallery or grid */}
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              "https://www.telensat.com.br/images/jpg/servicos/1.jpg",
+              "https://www.telensat.com.br/images/jpg/servicos/2.jpg",
+              "https://www.telensat.com.br/images/jpg/servicos/3.jpg",
+              "https://www.telensat.com.br/images/jpg/servicos/4.jpg",
+              "https://www.telensat.com.br/images/jpg/galeria/8.jpg",
+              "https://www.telensat.com.br/images/jpg/galeria/9.jpg",
+              "https://www.telensat.com.br/images/jpg/galeria/15.jpg",
+              "https://www.telensat.com.br/images/jpg/servicos/7.jpg",
+            ].map((src, i) => (
+              <div key={i} className="relative group overflow-hidden rounded-2xl aspect-square shadow-xl bg-slate-800 border border-slate-700">
+                <div className="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 mix-blend-overlay" />
+                <img 
+                  src={src} 
+                  alt={`Serviço Telensat ${i + 1}`} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-75 group-hover:brightness-100"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
