@@ -177,6 +177,35 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Institutional Video Section */}
+      <section className="py-24 bg-brand-neutral relative border-b border-slate-200 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[150px] pointer-events-none" />
+        
+        <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center mb-12">
+          <span className="text-brand-primary font-bold tracking-widest uppercase text-xs mb-3 block">Apresentação Operacional</span>
+          <h2 className="text-3xl md:text-5xl font-extrabold text-brand-secondary mb-6 tracking-tight">Assuma o controle total da sua operação.</h2>
+          <p className="text-lg text-slate-600 font-light max-w-2xl mx-auto leading-relaxed">
+            Descubra em detalhes como nossa engenharia de aplicação elimina falhas e zera as multas da sua frota pesada com precisão milimétrica.
+          </p>
+        </div>
+
+        <div className="container mx-auto px-6 max-w-4xl relative z-10">
+          <div className="relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-[8px] border-white max-w-4xl mx-auto aspect-video group bg-slate-900">
+            {/* The actual video element */}
+            <video 
+              className="w-full h-full object-cover"
+              poster="https://www.telensat.com.br/images/jpg/galeria/11.jpg"
+              controls
+              playsInline
+            >
+              <source src="/video-telensat.mp4" type="video/mp4" />
+              <source src="/video-telensat.webm" type="video/webm" />
+              Seu navegador não suporta a reprodução de vídeos.
+            </video>
+          </div>
+        </div>
+      </section>
+
       {/* Problem Section */}
       <section id="problema" className="py-24 relative bg-white text-brand-secondary border-b border-slate-100">
         {/* Clean background */}
