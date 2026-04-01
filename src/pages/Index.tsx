@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, ShieldCheck, Map, Activity, PhoneCall, TrendingDown, Zap, AlertTriangle, Eye, PlayCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Map, Activity, PhoneCall, TrendingDown, Zap, AlertTriangle, Eye, PlayCircle, Menu, X } from "lucide-react";
 
 const Index = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,26 +20,51 @@ const Index = () => {
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between pointer-events-auto">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 relative z-50">
             <img 
               src="https://www.telensat.com.br/images/png/logo.png" 
               alt="Telensat Logo" 
-              className={`h-10 transition-all duration-300 ${!scrolled && 'brightness-0 invert'}`}
+              className={`h-10 transition-all duration-300 ${(mobileMenuOpen || (!scrolled)) ? 'brightness-0 invert' : ''}`}
             />
           </div>
+          
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="#problema" className={`${scrolled ? 'text-slate-600 hover:text-blue-600' : 'text-white/80 hover:text-white'} transition-colors`}>Desafios</a>
             <a href="#tecnologia" className={`${scrolled ? 'text-slate-600 hover:text-blue-600' : 'text-white/80 hover:text-white'} transition-colors`}>Solução e Tecnologia</a>
-            <a href="#prova" className={`${scrolled ? 'text-slate-600 hover:text-blue-600' : 'text-white/80 hover:text-white'} transition-colors`}>Resultados</a>
+            <a href="#autoridade" className={`${scrolled ? 'text-slate-600 hover:text-blue-600' : 'text-white/80 hover:text-white'} transition-colors`}>Autoridade</a>
           </div>
+          
           <a 
             href="https://wa.me/559891293421" 
             target="_blank" 
             rel="noopener noreferrer"
-            className={`px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-md flex items-center gap-2 ${scrolled ? 'bg-blue-700 text-white hover:bg-blue-800' : 'bg-white text-blue-900 hover:bg-slate-100'}`}
+            className={`hidden md:flex px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-md items-center gap-2 ${scrolled ? 'bg-blue-700 text-white hover:bg-blue-800' : 'bg-white text-blue-900 hover:bg-slate-100'}`}
           >
             Fale Conosco
           </a>
+
+          {/* Mobile Toggle */}
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className={`md:hidden p-2 focus:outline-none relative z-50 transition-colors ${(scrolled && !mobileMenuOpen) ? 'text-slate-900' : 'text-white'}`}
+          >
+            {mobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+          </button>
+        </div>
+
+        {/* Mobile Menu Dropdown */}
+        <div className={`md:hidden fixed inset-0 top-0 pt-28 bg-slate-950/95 backdrop-blur-xl z-40 transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className="px-6 py-8 flex flex-col gap-8 items-center text-center">
+            <a onClick={() => setMobileMenuOpen(false)} href="#problema" className="text-xl font-bold text-white hover:text-cyan-400 uppercase tracking-widest">Desafios</a>
+            <a onClick={() => setMobileMenuOpen(false)} href="#tecnologia" className="text-xl font-bold text-white hover:text-cyan-400 uppercase tracking-widest">Solução e Tecnologia</a>
+            <a onClick={() => setMobileMenuOpen(false)} href="#autoridade" className="text-xl font-bold text-white hover:text-cyan-400 uppercase tracking-widest">Autoridade</a>
+            
+            <div className="h-px w-full bg-slate-800 my-4" />
+            
+            <a onClick={() => setMobileMenuOpen(false)} href="https://wa.me/559891293421" target="_blank" rel="noopener noreferrer" className="inline-flex w-full max-w-sm items-center justify-center px-8 py-4 bg-cyan-600 text-white rounded-xl font-bold shadow-[0_0_20px_rgba(6,182,212,0.3)]">
+              Falar com Consultor
+            </a>
+          </div>
         </div>
       </nav>
 
@@ -59,13 +85,6 @@ const Index = () => {
         
         <div className="container relative z-30 mx-auto px-6 max-w-7xl animate-fade-in">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-900/80 border border-cyan-500/40 text-cyan-400 text-xs font-bold uppercase tracking-[0.2em] mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500 shadow-[0_0_8px_rgba(6,182,212,1)]"></span>
-              </span>
-              Operação de Alto Rigor Técnico
-            </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight tracking-tighter mb-8 drop-shadow-2xl">
               Sua frota pronta para inspeção. <br className="hidden md:block"/>
@@ -112,7 +131,7 @@ const Index = () => {
       </section>
 
       {/* Clientes Parceiros Ticker */}
-      <section className="py-4 border-y border-slate-800/50 bg-slate-950/80 backdrop-blur-2xl overflow-hidden relative z-40 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+      <section className="py-6 border-y border-slate-200 bg-white overflow-hidden relative z-40 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
         <div className="relative flex overflow-x-hidden group">
           <div className="animate-marquee whitespace-nowrap flex items-center py-2">
             {[
@@ -136,12 +155,12 @@ const Index = () => {
                 key={i}
                 src={src}
                 alt="Parceiro"
-                className="h-8 md:h-10 w-auto min-w-[100px] max-w-[130px] object-contain flex-shrink-0 opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all duration-300 mx-6"
+                className="h-8 md:h-12 w-auto min-w-[100px] max-w-[140px] object-contain flex-shrink-0 opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-xl transition-all duration-300 mx-8 filter hover:brightness-110 contrast-125"
               />
             ))}
           </div>
-          {/* Duplicate for infinite scroll effect */}
-          <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center py-2">
+          
+          <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center py-2 h-full">
             {[
               "https://www.telensat.com.br/images/png/parceiros/cedro.png",
               "https://www.telensat.com.br/images/png/parceiros/eneva.png",
@@ -163,7 +182,7 @@ const Index = () => {
                 key={`dup-${i}`}
                 src={src}
                 alt="Parceiro"
-                className="h-8 md:h-10 w-auto min-w-[100px] max-w-[130px] object-contain flex-shrink-0 opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all duration-300 mx-6"
+                className="h-8 md:h-12 w-auto min-w-[100px] max-w-[140px] object-contain flex-shrink-0 opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-xl transition-all duration-300 mx-8 filter hover:brightness-110 contrast-125"
               />
             ))}
           </div>
