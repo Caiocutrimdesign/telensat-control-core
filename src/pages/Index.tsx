@@ -46,9 +46,8 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-slate-900">
         <div className="absolute inset-0 z-0">
-           {/* Placeholder for real hero video/image */}
-           <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-blue-900/40 z-10" />
-           <img src="https://images.unsplash.com/photo-1519003722811-92471030ef34?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Frota em operação" className="w-full h-full object-cover object-center" />
+           <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-blue-900/60 z-10" />
+           <img src="https://www.telensat.com.br/images/jpg/painel/1/painel01.jpg" alt="Telensat em operação" className="w-full h-full object-cover object-center" />
         </div>
         
         <div className="container relative z-10 mx-auto px-6 max-w-7xl animate-fade-in">
@@ -119,7 +118,7 @@ const Index = () => {
                 key={i}
                 src={src}
                 alt="Parceiro"
-                className="h-12 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mx-10"
+                className="h-12 w-auto min-w-[120px] max-w-[160px] object-contain flex-shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mx-8"
               />
             ))}
           </div>
@@ -146,7 +145,7 @@ const Index = () => {
                 key={`dup-${i}`}
                 src={src}
                 alt="Parceiro"
-                className="h-12 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mx-10"
+                className="h-12 w-auto min-w-[120px] max-w-[160px] object-contain flex-shrink-0 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mx-8"
               />
             ))}
           </div>
@@ -154,36 +153,39 @@ const Index = () => {
       </section>
 
       {/* Problem Section */}
-      <section id="problema" className="py-24 bg-white relative">
-        <div className="container mx-auto px-6 max-w-7xl">
+      <section id="problema" className="py-24 relative bg-slate-900 text-white">
+        <div className="absolute inset-0 z-0 opacity-20">
+           <img src="https://www.telensat.com.br/images/jpg/explicativo.jpg" alt="Desafios logisticos" className="w-full h-full object-cover object-center" />
+        </div>
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">O custo da falta de controle</h2>
-            <p className="text-lg text-slate-600">Se você não sabe exatamente o que está acontecendo na sua frota agora, você já está tendo prejuízo.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">O custo da falta de controle</h2>
+            <p className="text-lg text-slate-300">Se você não sabe exatamente o que está acontecendo na sua frota agora, você já está tendo prejuízo.</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 mb-6">
+            <div className="p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl">
+              <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center text-red-400 mb-6">
                 <TrendingDown className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Multas Inesperadas</h3>
-              <p className="text-slate-600 leading-relaxed">Excesso de velocidade e desvios de rota viram prejuízo financeiro antes mesmo que você perceba.</p>
+              <h3 className="text-xl font-bold text-white mb-3">Multas Inesperadas</h3>
+              <p className="text-slate-300 leading-relaxed">Excesso de velocidade e desvios de rota viram prejuízo financeiro antes mesmo que você perceba.</p>
             </div>
             
-            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6">
+            <div className="p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl">
+              <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center text-orange-400 mb-6">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Reprovação em Inspeções</h3>
-              <p className="text-slate-600 leading-relaxed">Equipamentos falhos e falta de dados estruturados barram sua operação em clientes rigorosos.</p>
+              <h3 className="text-xl font-bold text-white mb-3">Reprovação em Inspeções</h3>
+              <p className="text-slate-300 leading-relaxed">Equipamentos falhos e falta de dados estruturados barram sua operação em clientes rigorosos.</p>
             </div>
             
-            <div className="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 mb-6">
+            <div className="p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-xl">
+              <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 mb-6">
                 <Activity className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Comportamento de Risco</h3>
-              <p className="text-slate-600 leading-relaxed">Frenagens bruscas e cansaço ao volante aumentam drasticamente os custos de manutenção e acidentes.</p>
+              <h3 className="text-xl font-bold text-white mb-3">Comportamento de Risco</h3>
+              <p className="text-slate-300 leading-relaxed">Frenagens bruscas e cansaço ao volante aumentam drasticamente os custos de manutenção e acidentes.</p>
             </div>
           </div>
         </div>
@@ -254,29 +256,33 @@ const Index = () => {
       </section>
 
       {/* Results / CTA Final */}
-      <section id="prova" className="py-24 bg-blue-50 relative overflow-hidden">
+      <section id="prova" className="py-24 relative overflow-hidden bg-slate-900 text-white">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-blue-900/60 z-10" />
+          <img src="https://www.telensat.com.br/images/jpg/painel/3/painel03.jpg" alt="Telensat frota resultado" className="w-full h-full object-cover object-center" />
+        </div>
         <div className="container mx-auto px-6 max-w-7xl relative z-10 text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">O resultado? Sua frota aprovada.</h2>
-          <p className="text-xl text-slate-600 mb-12 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">O resultado? Sua frota aprovada.</h2>
+          <p className="text-xl text-slate-300 mb-12 max-w-3xl mx-auto">
             A Telensat reduz os riscos e o Custo Operacional, preparando seus veículos e gerando dados para as auditorias mais complexas do mercado.
           </p>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-              <div className="text-4xl font-extrabold text-blue-600 mb-2">100%</div>
-              <div className="text-sm font-medium text-slate-600">Aprovação em Inspeções</div>
+            <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/20">
+              <div className="text-4xl font-extrabold text-white mb-2">100%</div>
+              <div className="text-sm font-medium text-blue-200">Aprovação em Inspeções</div>
             </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-              <div className="text-4xl font-extrabold text-blue-600 mb-2">-40%</div>
-              <div className="text-sm font-medium text-slate-600">Redução de Multas</div>
+            <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/20">
+              <div className="text-4xl font-extrabold text-white mb-2">-40%</div>
+              <div className="text-sm font-medium text-blue-200">Redução de Multas</div>
             </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-              <div className="text-4xl font-extrabold text-blue-600 mb-2">24h</div>
-              <div className="text-sm font-medium text-slate-600">Monitoramento Contínuo</div>
+            <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/20">
+              <div className="text-4xl font-extrabold text-white mb-2">24h</div>
+              <div className="text-sm font-medium text-blue-200">Monitoramento Contínuo</div>
             </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-              <div className="text-4xl font-extrabold text-blue-600 mb-2">+ ROI</div>
-              <div className="text-sm font-medium text-slate-600">Retorno Sustentável</div>
+            <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/20">
+              <div className="text-4xl font-extrabold text-white mb-2">+ ROI</div>
+              <div className="text-sm font-medium text-blue-200">Retorno Sustentável</div>
             </div>
           </div>
 
