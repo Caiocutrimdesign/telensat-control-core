@@ -254,6 +254,58 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Autoridade e Conteúdo (Operação Telensat) */}
+      <section id="autoridade" className="py-24 bg-slate-50 relative">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-3 block">Operação Telensat</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Referência Técnica no Mercado B2B</h2>
+            <p className="text-lg text-slate-600">Não vendemos por estética. Comprovamos em campo. Acompanhe nossos conteúdos onde ensinamos, alertamos e provamos nossa execução real todos os dias.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="group rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 bg-white border border-slate-100 flex flex-col">
+              <div className="h-56 overflow-hidden relative">
+                <img src="https://www.telensat.com.br/images/jpg/galeria/11.jpg" alt="Conteúdo Técnico" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
+                <div className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide shadow-lg cursor-default">Técnico</div>
+                <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-white leading-snug">Como funciona a Inspeção Vale e o Rotagrama?</h3>
+              </div>
+              <div className="p-8 flex-1 flex flex-col">
+                <p className="text-slate-600 mb-6 flex-1 leading-relaxed">Entenda passo a passo o que reprova uma frota e como parametrizar os sensores para atender às exigências mais severas do mercado nacional.</p>
+                <a href="https://wa.me/559891293421" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-800 flex items-center gap-2 mt-auto transition-colors">Solicitar Manual Técnico <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" /></a>
+              </div>
+            </div>
+
+            <div className="group rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 bg-white border border-slate-100 flex flex-col">
+              <div className="h-56 overflow-hidden relative">
+                <img src="https://www.telensat.com.br/images/jpg/explicativo.jpg" alt="Conteúdo de Alerta" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
+                <div className="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide shadow-lg cursor-default">Alerta Operacional</div>
+                <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-white leading-snug">O erro ignorado que reprova frotas inteiras</h3>
+              </div>
+              <div className="p-8 flex-1 flex flex-col">
+                <p className="text-slate-600 mb-6 flex-1 leading-relaxed">Descubra as falhas comuns em instalações amadoras e por que depender de fornecedores genéricos sem estrutura pode gerar multas e atrasar sua operação.</p>
+                <a href="https://wa.me/559891293421" target="_blank" rel="noopener noreferrer" className="font-bold text-red-600 hover:text-red-800 flex items-center gap-2 mt-auto transition-colors">Analisar Meus Riscos <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" /></a>
+              </div>
+            </div>
+
+            <div className="group rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 bg-white border border-slate-100 flex flex-col">
+              <div className="h-56 overflow-hidden relative bg-slate-900">
+                <img src="https://www.telensat.com.br/images/jpg/painel/5/caminhao.png" alt="Prova de Execução" className="w-full h-full object-contain object-center group-hover:scale-110 transition-transform duration-700 opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent" />
+                <div className="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide shadow-lg cursor-default">Execução Real</div>
+                <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-white leading-snug">Instalação e Parametrização em Campo</h3>
+              </div>
+              <div className="p-8 flex-1 flex flex-col">
+                <p className="text-slate-600 mb-6 flex-1 leading-relaxed">Sair da teoria para a prática. Acompanhe os bastidores da nossa equipe aplicando telemetria avançada, sensores de fadiga e RFID diretamente nos ativos.</p>
+                <a href="https://wa.me/559891293421" target="_blank" rel="noopener noreferrer" className="font-bold text-emerald-600 hover:text-emerald-800 flex items-center gap-2 mt-auto transition-colors">Agendar Demonstração <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Results / CTA Final */}
       <section id="prova" className="py-24 relative overflow-hidden bg-slate-900 text-white">
         <div className="absolute inset-0 z-0">
