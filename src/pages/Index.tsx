@@ -21,7 +21,10 @@ const translations = {
     guarantee: "Aprovação Garantida na Vistoria Vale",
     fatigue: "Sensor de Fadiga Exclusivo",
     videotech: "Vídeo Telemetria Antidesvio",
-    ai: "Inteligência Artificial"
+    ai: "Inteligência Artificial",
+    ecosystem: "Ecossistema de Ponta a Ponta",
+    ecosystemSubtitle: "Soluções integradas para operações complexas",
+    ecosystemDesc: "Muito além do rastreamento básico. Entregamos a conectividade e o sensoriamento exigidos pelas maiores companhias do país."
   },
   en: {
     support: "Support / Sales:",
@@ -39,7 +42,10 @@ const translations = {
     guarantee: "Guaranteed passing on Vale Inspection",
     fatigue: "Exclusive Fatigue Sensor",
     videotech: "Anti-deviation Video Telemetry",
-    ai: "Artificial Intelligence"
+    ai: "Artificial Intelligence",
+    ecosystem: "End-to-End Ecosystem",
+    ecosystemSubtitle: "Integrated solutions for complex operations",
+    ecosystemDesc: "Far beyond basic tracking. We deliver the connectivity and sensing required by the country's largest companies."
   },
   es: {
     support: "Soporte / Ventas:",
@@ -57,7 +63,10 @@ const translations = {
     guarantee: "Aprobación Garantizada en Inspección Vale",
     fatigue: "Sensor de Fatiga Exclusivo",
     videotech: "Video Telemetría Antidesvío",
-    ai: "Inteligencia Artificial"
+    ai: "Inteligencia Artificial",
+    ecosystem: "Ecosistema de Punta a Punta",
+    ecosystemSubtitle: "Soluciones integradas para operaciones complejas",
+    ecosystemDesc: "Mucho más que un rastreo básico. Entregamos la conectividad y el sensoramiento exigidos por las mayores compañías del país."
   }
 };
 
@@ -298,31 +307,118 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Institutional Video Section */}
-      <section className="py-24 bg-brand-neutral relative border-b border-slate-200 overflow-hidden">
+      {/* Ecossistema de Ponta a Ponta - Refactored */}
+      <section id="ecossistema" className="py-20 bg-brand-neutral relative border-b border-slate-200 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[150px] pointer-events-none" />
         
-        <div className="container mx-auto px-6 max-w-5xl relative z-10 text-center mb-12">
-          <span className="text-brand-primary font-bold tracking-widest uppercase text-xs mb-3 block">Apresentação Operacional</span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-brand-secondary mb-6 tracking-tight">Assuma o controle total da sua operação.</h2>
-          <p className="text-lg text-slate-600 font-light max-w-2xl mx-auto leading-relaxed">
-            Descubra em detalhes como nossa engenharia de aplicação elimina falhas e zera as multas da sua frota pesada com precisão milimétrica.
-          </p>
-        </div>
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16 px-4">
+            <span className="text-brand-primary font-bold tracking-widest uppercase text-xs mb-3 block">{t('ecosystem')}</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-brand-secondary mb-6 tracking-tight leading-tight">
+              {t('ecosystemSubtitle')}
+            </h2>
+            <p className="text-lg text-slate-700 font-medium max-w-2xl mx-auto leading-relaxed bg-white/40 backdrop-blur-sm rounded-2xl py-4 px-6 shadow-sm border border-white/20">
+              {t('ecosystemDesc')}
+            </p>
+          </div>
 
-        <div className="container mx-auto px-6 max-w-4xl relative z-10">
-          <div className="relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-[8px] border-white max-w-4xl mx-auto aspect-video group bg-slate-900">
-            {/* The actual video element */}
-            <video 
-              className="w-full h-full object-cover"
-              poster="https://www.telensat.com.br/images/jpg/galeria/11.jpg"
-              controls
-              playsInline
-            >
-              <source src="/video-telensat.mp4" type="video/mp4" />
-              <source src="/video-telensat.webm" type="video/webm" />
-              Seu navegador não suporta a reprodução de vídeos.
-            </video>
+          {/* Compact Premium Grid of Services */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            
+            {/* 1. Plataforma */}
+            <div className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center hover:-translate-y-2 overflow-hidden relative">
+              <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-50 rounded-full blur-2xl group-hover:bg-blue-100 transition-colors duration-500" />
+              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform duration-500 border border-blue-100">
+                <Truck className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-secondary mb-3 tracking-tight">Acionamento de Plataforma</h3>
+              <p className="text-slate-600 text-sm leading-relaxed font-normal">Monitoramento e relatórios precisos de data, local e horário de uso da plataforma guincho.</p>
+              <div className="mt-auto pt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <img src="https://www.telensat.com.br/images/jpg/servicos/1.jpg" className="w-full h-32 object-cover rounded-xl shadow-inner border border-slate-100" alt="Plataforma" />
+              </div>
+            </div>
+
+            {/* 2. Porta Baú */}
+            <div className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center hover:-translate-y-2 overflow-hidden relative">
+              <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-50 rounded-full blur-2xl group-hover:bg-blue-100 transition-colors duration-500" />
+              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform duration-500 border border-blue-100">
+                <PackageOpen className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-secondary mb-3 tracking-tight">Porta Baú Inteligente</h3>
+              <p className="text-slate-600 text-sm leading-relaxed font-normal">Identificação imediata de abertura de portas de baú ou utilitários, erradicando surpresas em rota.</p>
+              <div className="mt-auto pt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <img src="https://www.telensat.com.br/images/jpg/servicos/2.jpg" className="w-full h-32 object-cover rounded-xl shadow-inner border border-slate-100" alt="Porta Bau" />
+              </div>
+            </div>
+
+            {/* 3. Temperatura */}
+            <div className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center hover:-translate-y-2 overflow-hidden relative">
+              <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-50 rounded-full blur-2xl group-hover:bg-blue-100 transition-colors duration-500" />
+              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform duration-500 border border-blue-100">
+                <Thermometer className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-secondary mb-3 tracking-tight">Gestão de Refrigeração</h3>
+              <p className="text-slate-600 text-sm leading-relaxed font-normal">Monitoramento termométrico em tempo real com alertas de variação por tela e SMS.</p>
+              <div className="mt-auto pt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <img src="https://www.telensat.com.br/images/jpg/servicos/3.jpg" className="w-full h-32 object-cover rounded-xl shadow-inner border border-slate-100" alt="Temperatura" />
+              </div>
+            </div>
+
+            {/* 4. Identificador */}
+            <div className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center hover:-translate-y-2 overflow-hidden relative">
+              <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-50 rounded-full blur-2xl group-hover:bg-blue-100 transition-colors duration-500" />
+              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform duration-500 border border-blue-100">
+                <UserCheck className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-secondary mb-3 tracking-tight">Identificador RF-ID</h3>
+              <p className="text-slate-600 text-sm leading-relaxed font-normal">Acesso restrito via Ibuttons ou Smart Card, gerando relatórios completos por motorista.</p>
+              <div className="mt-auto pt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <img src="https://www.telensat.com.br/images/jpg/servicos/4.jpg" className="w-full h-32 object-cover rounded-xl shadow-inner border border-slate-100" alt="Motorista" />
+              </div>
+            </div>
+
+            {/* 5. Monitriip */}
+            <div className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center hover:-translate-y-2 overflow-hidden relative">
+              <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-50 rounded-full blur-2xl group-hover:bg-blue-100 transition-colors duration-500" />
+              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform duration-500 border border-blue-100">
+                <FileCheck className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-secondary mb-3 tracking-tight">Sistema Monitriip ANTT</h3>
+              <p className="text-slate-600 text-sm leading-relaxed font-normal">Homologado para envio em tempo real de dados para monitoramento interestadual.</p>
+              <div className="mt-auto pt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <img src="https://www.telensat.com.br/images/jpg/servicos/5.jpg" className="w-full h-32 object-cover rounded-xl shadow-inner border border-slate-100" alt="ANTT" />
+              </div>
+            </div>
+
+            {/* 6. Sensor de Fadiga */}
+            <div className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 flex flex-col items-center text-center hover:-translate-y-2 overflow-hidden relative">
+              <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-50 rounded-full blur-2xl group-hover:bg-blue-100 transition-colors duration-500" />
+              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform duration-500 border border-blue-100">
+                <Brain className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-secondary mb-3 tracking-tight">Sensor IA de Fadiga</h3>
+              <p className="text-slate-600 text-sm leading-relaxed font-normal">Identificação de distração, sono ou falar ao celular com alertas sonoros e visuais na cabine.</p>
+              <div className="mt-auto pt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <img src="https://www.telensat.com.br/images/jpg/servicos/6.jpg" className="w-full h-32 object-cover rounded-xl shadow-inner border border-slate-100" alt="IA" />
+              </div>
+            </div>
+
+            {/* 7. SmartOne C & Satellite Integration */}
+            <div className="group bg-brand-primary rounded-3xl p-6 shadow-2xl hover:shadow-brand-primary/40 transition-all duration-500 border border-blue-800 flex flex-col items-center text-center hover:-translate-y-2 sm:col-span-2 lg:col-span-2 overflow-hidden relative">
+              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/15 transition-all duration-700 pointer-events-none" />
+              <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-500 border border-white/20">
+                <Satellite className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">Comunicação Satelital</h3>
+              <p className="text-blue-100 text-sm leading-relaxed font-light mb-6">Cobertura absoluta para veículos, barcos e máquinas agrícolas imunes a Jammer em toda LA.</p>
+              <div className="grid grid-cols-2 gap-4 w-full text-white text-[10px] uppercase font-black tracking-widest">
+                <div className="flex items-center gap-2 bg-blue-900/50 p-2 rounded-lg border border-blue-800"><CheckCircle2 className="w-3 h-3 text-blue-300" /> 100% Satelital</div>
+                <div className="flex items-center gap-2 bg-blue-900/50 p-2 rounded-lg border border-blue-800"><CheckCircle2 className="w-3 h-3 text-blue-300" /> Zero Jammer</div>
+              </div>
+              <div className="mt-auto pt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <img src="https://www.telensat.com.br/images/jpg/servicos/7.jpg" className="w-full h-32 object-cover rounded-xl shadow-inner border border-blue-800" alt="Satelite" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -436,171 +532,6 @@ const Index = () => {
                 </li>
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Ecossistema de Serviços Integrados */}
-      <section id="servicos" className="py-24 bg-white relative border-t border-slate-100 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none" />
-        
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-brand-primary font-bold tracking-widest uppercase text-xs mb-3 block">Ecossistema de Ponta a Ponta</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-brand-secondary mb-6 tracking-tight">Soluções integradas para <span className="text-brand-primary">operações complexas</span></h2>
-            <p className="text-lg text-slate-600 font-light">Muito além do rastreamento básico. Entregamos a conectividade e o sensoriamento exigidos pelas maiores companhias do país.</p>
-          </div>
-
-          <div className="space-y-16 lg:space-y-32">
-            
-            {/* 1. PLATAFORMA (Img Left) */}
-            <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 group">
-              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] h-[300px] lg:h-[400px] border border-slate-100 bg-slate-50 group-hover:shadow-[0_20px_40px_-15px_rgba(0,74,153,0.2)] transition-shadow duration-500">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/1.jpg" alt="Detecção de Acionamento de Plataforma" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-[1.15] saturate-[1.15] brightness-[1.05] group-hover:contrast-125" />
-              </div>
-              <div className="w-full lg:w-1/2 space-y-6 sequence-fade-up">
-                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-brand-primary font-medium text-sm">
-                  <Truck className="w-4 h-4" /> Sensoriamento Físico
-                </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-brand-secondary tracking-tight">Detecção de Acionamento de Plataforma</h3>
-                <div className="space-y-4 text-slate-600 text-lg font-light leading-relaxed">
-                  <p>Serviço que integra sensores de acionamento em plataformas de caminhões guincho ao rastreador da Telensat.</p>
-                  <p>Através destes sensores é possível obter relatórios de acionamento da plataforma com data, horário e local onde ela foi acionada.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* 2. PORTA BAÚ (Img Right) */}
-            <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-16 group">
-              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] h-[300px] lg:h-[400px] border border-slate-100 bg-slate-50 group-hover:shadow-[0_20px_40px_-15px_rgba(0,74,153,0.2)] transition-shadow duration-500">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/2.jpg" alt="Detecção de Abertura de Porta Baú" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-[1.15] saturate-[1.15] brightness-[1.05] group-hover:contrast-125" />
-              </div>
-              <div className="w-full lg:w-1/2 space-y-6 sequence-fade-up">
-                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-brand-primary font-medium text-sm">
-                  <PackageOpen className="w-4 h-4" /> Segurança de Ativos
-                </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-brand-secondary tracking-tight">Detecção de Abertura de Porta Baú</h3>
-                <div className="space-y-4 text-slate-600 text-lg font-light leading-relaxed">
-                  <p>Serviço que integra sensores de abertura de porta baú de caminhões ou utilitários ao rastreador da Telensat.</p>
-                  <p>Através destes sensores é possível obter relatórios de abertura de portas baú com data, horário e local onde ela foi aberta, erradicando surpresas em rota.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* 3. TEMPERATURA (Img Left) */}
-            <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 group">
-              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] h-[300px] lg:h-[400px] border border-slate-100 bg-slate-50 group-hover:shadow-[0_20px_40px_-15px_rgba(0,74,153,0.2)] transition-shadow duration-500">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/3.jpg" alt="Monitoramento de Temperatura" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-[1.15] saturate-[1.15] brightness-[1.05] group-hover:contrast-125" />
-              </div>
-              <div className="w-full lg:w-1/2 space-y-6 sequence-fade-up">
-                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-brand-primary font-medium text-sm">
-                  <Thermometer className="w-4 h-4" /> Termometria Exata
-                </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-brand-secondary tracking-tight">Monitoramento Constante de Temperatura</h3>
-                <div className="space-y-4 text-slate-600 text-lg font-light leading-relaxed">
-                  <p>Serviço de monitoramento de câmaras refrigeradas de caminhões ou containers, que unem sensores de temperatura ao rastreador da Telensat.</p>
-                  <p>As temperaturas são medidas em tempo real através dos sensores, e ao atingir valores fora de padrão definidas pelo usuário, são enviados alertas na tela e por SMS.</p>
-                  <p>Este serviço opcional oferece maior praticidade ao gerenciador de frotas controlar a qualidade da refrigeração de suas cargas.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* 4. IDENTIFICADOR (Img Right) */}
-            <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-16 group">
-              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] h-[300px] lg:h-[400px] border border-slate-100 bg-slate-50 group-hover:shadow-[0_20px_40px_-15px_rgba(0,74,153,0.2)] transition-shadow duration-500">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/4.jpg" alt="Identificador de Motorista" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-[1.15] saturate-[1.15] brightness-[1.05] group-hover:contrast-125" />
-              </div>
-              <div className="w-full lg:w-1/2 space-y-6 sequence-fade-up">
-                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-brand-primary font-medium text-sm">
-                  <UserCheck className="w-4 h-4" /> IButton & RFID
-                </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-brand-secondary tracking-tight">Identificador de Motorista Autorizado</h3>
-                <div className="space-y-4 text-slate-600 text-lg font-light leading-relaxed">
-                  <p>Serviço de identificação e controle de motoristas online, acoplado ao rastreador da Telensat no veículo.</p>
-                  <p>O controle de acesso é realizado através de Ibuttons ou Smart Card RF-ID, identificando quem deu partida no veículo. A vantagem do Smart Card é que pode ser utilizado como crachá pelo motorista.</p>
-                  <p>Através do identificador, é possível a emissão de relatórios dos veículos utilizados, entregas efetuadas, velocidades excedidas, entre outras funções que auxiliam a gestão de sua frota.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* 5. MONITRIIP (Img Left) */}
-            <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 group">
-              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] h-[300px] lg:h-[400px] border border-slate-100 bg-slate-50 group-hover:shadow-[0_20px_40px_-15px_rgba(0,74,153,0.2)] transition-shadow duration-500">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/5.jpg" alt="Implantação do Sistema Monitriip" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-[1.15] saturate-[1.15] brightness-[1.05] group-hover:contrast-125" />
-              </div>
-              <div className="w-full lg:w-1/2 space-y-6 sequence-fade-up">
-                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-brand-primary font-medium text-sm">
-                  <FileCheck className="w-4 h-4" /> Homologação ANTT
-                </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-brand-secondary tracking-tight">Implantação do Sistema Monitriip</h3>
-                <div className="space-y-4 text-slate-600 text-lg font-light leading-relaxed">
-                  <p>Serviço de implantação do Sistema Monitriip - Monitoramento do Transporte Rodoviário Interestadual e Internacional Coletivo de Passageiros.</p>
-                  <p className="text-brand-secondary font-medium">A Telensat é uma empresa homologada pela ANTT - Agência Nacional de Transportes Terrestres, a implantar o Sistema Monitriip.</p>
-                  <p>O serviço consiste em enviar dados monitorados do veículo durante a viagem em tempo real, diretamente à agência através do rastreador Telensat.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* 6. SENSOR DE FADIGA (Img Right) */}
-            <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-16 group">
-              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] h-[400px] lg:h-[600px] border border-slate-100 bg-slate-50 group-hover:shadow-[0_20px_40px_-15px_rgba(0,74,153,0.2)] transition-shadow duration-500">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/6.jpg" alt="Sensor de Fadiga" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-[1.15] saturate-[1.15] brightness-[1.05] group-hover:contrast-125" />
-              </div>
-              <div className="w-full lg:w-1/2 space-y-6 sequence-fade-up">
-                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-brand-primary font-medium text-sm">
-                  <Brain className="w-4 h-4" /> I-VUE Inteligência Artificial
-                </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-brand-secondary tracking-tight">Avançado Sensor de Fadiga</h3>
-                <div className="space-y-4 text-slate-600 lg:text-lg font-light leading-relaxed">
-                  <p>I-VUE permite integração de informações e gestão de comunicação de relatórios com o sistema de telemetria RS 232 gerenciamento frotas, mdvr car, computador embarcado e etc.</p>
-                  <p>Emite alerta ao motorista e ao sistema Telecom Track, quando detecta comportamentos de risco ao volante como: Distração, fadiga, falar ao celular, sonolência e cigarro.</p>
-                  <p>Alerta em tempo real na cabine do motorista, envio de dados para central de monitoramento.</p>
-                  <p>Redução de riscos devido a análise estatísticas dos índices de fadiga e distração, melhoria contínua de estratégia para redução de eventos de fadiga e distração.</p>
-                  
-                  <div className="pt-4 border-t border-slate-200 mt-6">
-                    <strong className="text-brand-secondary block mb-4">Existe sete tipos de eventos de fadiga e distração:</strong>
-                    <ul className="grid sm:grid-cols-2 gap-3 text-sm text-slate-600">
-                      <li className="flex gap-2 items-start"><CheckCircle2 className="w-4 h-4 text-brand-primary mt-1 shrink-0" /> Fechamento de olhos.</li>
-                      <li className="flex gap-2 items-start"><CheckCircle2 className="w-4 h-4 text-brand-primary mt-1 shrink-0" /> Mais de 2 segundos.</li>
-                      <li className="flex gap-2 items-start sm:col-span-2"><CheckCircle2 className="w-4 h-4 text-brand-primary mt-1 shrink-0" /> Distração lateral estendida (evitando alarmes falsos de retrovisor).</li>
-                      <li className="flex gap-2 items-start"><CheckCircle2 className="w-4 h-4 text-brand-primary mt-1 shrink-0" /> Uso de Celular ao volante.</li>
-                      <li className="flex gap-2 items-start"><CheckCircle2 className="w-4 h-4 text-brand-primary mt-1 shrink-0" /> Fumando cigarro.</li>
-                      <li className="flex gap-2 items-start"><CheckCircle2 className="w-4 h-4 text-brand-primary mt-1 shrink-0" /> Ausência no lugar.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* 7. SMARTONE C - Hero Bottom Block */}
-            <div className="pt-8 lg:pt-16 mt-8">
-              <div className="bg-brand-primary rounded-[2.5rem] p-8 md:p-16 border border-blue-900 shadow-2xl flex flex-col lg:flex-row gap-8 lg:gap-20 items-center justify-between group overflow-hidden relative">
-                <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-white/10 rounded-full blur-[100px] group-hover:bg-white/20 transition-all duration-700 pointer-events-none" />
-                
-                <div className="lg:w-1/2 relative space-y-8 z-10 w-full text-white">
-                  <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-900/50 border border-blue-800 text-blue-100 font-medium text-sm">
-                    <Satellite className="w-4 h-4" /> Cobertura Absoluta
-                  </div>
-                  <h3 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Rastreador Satelital SmartOne C</h3>
-                  <p className="text-blue-100 text-lg font-light leading-relaxed">
-                    Rastreie veículos, barcos e máquinas agrícolas como solução para melhorar a eficiência e a segurança de suas operações, no asfalto e na poeira.
-                  </p>
-                  <ul className="grid sm:grid-cols-2 gap-4 text-white text-sm md:text-base">
-                    <li className="flex items-center gap-3 bg-blue-900/40 p-3 rounded-lg border border-blue-800"><CheckCircle2 className="w-5 h-5 text-blue-300 flex-shrink-0" /> Comunicação 100% Satelital</li>
-                    <li className="flex items-center gap-3 bg-blue-900/40 p-3 rounded-lg border border-blue-800"><CheckCircle2 className="w-5 h-5 text-blue-300 flex-shrink-0" /> Melhor custo benefício</li>
-                    <li className="flex items-center gap-3 bg-blue-900/40 p-3 rounded-lg border border-blue-800"><CheckCircle2 className="w-5 h-5 text-blue-300 flex-shrink-0" /> Acesso em LA e Brasil</li>
-                    <li className="flex items-center gap-3 bg-blue-900/40 p-3 rounded-lg border border-blue-800"><CheckCircle2 className="w-5 h-5 text-blue-300 flex-shrink-0" /> Diversos relatórios gerenciais</li>
-                    <li className="flex items-center gap-3 bg-blue-900/40 p-3 rounded-lg border border-blue-800"><CheckCircle2 className="w-5 h-5 text-blue-300 flex-shrink-0" /> Segurança ativa nos ativos</li>
-                    <li className="flex items-center gap-3 bg-blue-900/40 p-3 rounded-lg border border-blue-800"><CheckCircle2 className="w-5 h-5 text-blue-300 flex-shrink-0" /> Imune a Jammer</li>
-                  </ul>
-                </div>
-                
-                <div className="lg:w-[45%] w-full h-[400px] lg:h-[600px] relative rounded-3xl overflow-hidden shadow-2xl z-10 border border-blue-900">
-                  <img src="https://www.telensat.com.br/images/jpg/servicos/7.jpg" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-[1.15] saturate-[1.15] brightness-[1.05] group-hover:contrast-125" alt="SmartOne C" />
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
