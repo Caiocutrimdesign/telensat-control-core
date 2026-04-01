@@ -305,9 +305,8 @@ const Index = () => {
             
             {/* 1. PLATAFORMA (Img Left) */}
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 group">
-              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-xl h-[300px] lg:h-[450px] border border-slate-100">
-                <div className="absolute inset-0 bg-brand-primary/0 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-700" />
-                <img src="https://www.telensat.com.br/images/jpg/servicos/1.jpg" alt="Detecção de Acionamento de Plataforma" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] h-[300px] lg:h-[400px] border border-slate-100 bg-slate-50 group-hover:shadow-[0_20px_40px_-15px_rgba(0,74,153,0.2)] transition-shadow duration-500">
+                <img src="https://www.telensat.com.br/images/jpg/servicos/1.jpg" alt="Detecção de Acionamento de Plataforma" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-[1.15] saturate-[1.15] brightness-[1.05] group-hover:contrast-125" />
               </div>
               <div className="w-full lg:w-1/2 space-y-6 sequence-fade-up">
                 <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-brand-primary font-medium text-sm">
@@ -323,8 +322,8 @@ const Index = () => {
 
             {/* 2. PORTA BAÚ (Img Right) */}
             <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-16 group">
-              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-xl h-[300px] lg:h-[450px] border border-slate-100">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/2.jpg" alt="Detecção de Abertura de Porta Baú" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] h-[300px] lg:h-[400px] border border-slate-100 bg-slate-50 group-hover:shadow-[0_20px_40px_-15px_rgba(0,74,153,0.2)] transition-shadow duration-500">
+                <img src="https://www.telensat.com.br/images/jpg/servicos/2.jpg" alt="Detecção de Abertura de Porta Baú" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-[1.15] saturate-[1.15] brightness-[1.05] group-hover:contrast-125" />
               </div>
               <div className="w-full lg:w-1/2 space-y-6 sequence-fade-up">
                 <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-brand-primary font-medium text-sm">
@@ -340,8 +339,8 @@ const Index = () => {
 
             {/* 3. TEMPERATURA (Img Left) */}
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 group">
-              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-xl h-[300px] lg:h-[450px] border border-slate-100">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/3.jpg" alt="Monitoramento de Temperatura" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] h-[300px] lg:h-[400px] border border-slate-100 bg-slate-50 group-hover:shadow-[0_20px_40px_-15px_rgba(0,74,153,0.2)] transition-shadow duration-500">
+                <img src="https://www.telensat.com.br/images/jpg/servicos/3.jpg" alt="Monitoramento de Temperatura" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-[1.15] saturate-[1.15] brightness-[1.05] group-hover:contrast-125" />
               </div>
               <div className="w-full lg:w-1/2 space-y-6 sequence-fade-up">
                 <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-brand-primary font-medium text-sm">
@@ -358,8 +357,8 @@ const Index = () => {
 
             {/* 4. IDENTIFICADOR (Img Right) */}
             <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-16 group">
-              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-xl h-[300px] lg:h-[450px] border border-slate-100">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/4.jpg" alt="Identificador de Motorista" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] h-[300px] lg:h-[400px] border border-slate-100 bg-slate-50 group-hover:shadow-[0_20px_40px_-15px_rgba(0,74,153,0.2)] transition-shadow duration-500">
+                <img src="https://www.telensat.com.br/images/jpg/servicos/4.jpg" alt="Identificador de Motorista" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-[1.15] saturate-[1.15] brightness-[1.05] group-hover:contrast-125" />
               </div>
               <div className="w-full lg:w-1/2 space-y-6 sequence-fade-up">
                 <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-brand-primary font-medium text-sm">
@@ -376,8 +375,8 @@ const Index = () => {
 
             {/* 5. MONITRIIP (Img Left) */}
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 group">
-              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-xl h-[300px] lg:h-[450px] border border-slate-100">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/5.jpg" alt="Implantação do Sistema Monitriip" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] h-[300px] lg:h-[400px] border border-slate-100 bg-slate-50 group-hover:shadow-[0_20px_40px_-15px_rgba(0,74,153,0.2)] transition-shadow duration-500">
+                <img src="https://www.telensat.com.br/images/jpg/servicos/5.jpg" alt="Implantação do Sistema Monitriip" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-[1.15] saturate-[1.15] brightness-[1.05] group-hover:contrast-125" />
               </div>
               <div className="w-full lg:w-1/2 space-y-6 sequence-fade-up">
                 <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-brand-primary font-medium text-sm">
@@ -394,8 +393,8 @@ const Index = () => {
 
             {/* 6. SENSOR DE FADIGA (Img Right) */}
             <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-16 group">
-              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-xl h-[400px] lg:h-[650px] border border-slate-100">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/6.jpg" alt="Sensor de Fadiga" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div className="w-full lg:w-1/2 relative rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] h-[400px] lg:h-[600px] border border-slate-100 bg-slate-50 group-hover:shadow-[0_20px_40px_-15px_rgba(0,74,153,0.2)] transition-shadow duration-500">
+                <img src="https://www.telensat.com.br/images/jpg/servicos/6.jpg" alt="Sensor de Fadiga" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-[1.15] saturate-[1.15] brightness-[1.05] group-hover:contrast-125" />
               </div>
               <div className="w-full lg:w-1/2 space-y-6 sequence-fade-up">
                 <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-brand-primary font-medium text-sm">
@@ -447,7 +446,7 @@ const Index = () => {
                 </div>
                 
                 <div className="lg:w-[45%] w-full h-[400px] lg:h-[600px] relative rounded-3xl overflow-hidden shadow-2xl z-10 border border-blue-900">
-                  <img src="https://www.telensat.com.br/images/jpg/servicos/7.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="SmartOne C" />
+                  <img src="https://www.telensat.com.br/images/jpg/servicos/7.jpg" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 filter contrast-[1.15] saturate-[1.15] brightness-[1.05] group-hover:contrast-125" alt="SmartOne C" />
                 </div>
               </div>
             </div>
