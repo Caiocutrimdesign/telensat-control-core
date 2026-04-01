@@ -5,6 +5,8 @@ import SolutionSection from "@/components/SolutionSection";
 import TechnicalSection from "@/components/TechnicalSection";
 import ExecutionSection from "@/components/ExecutionSection";
 import ResultsSection from "@/components/ResultsSection";
+import PartnersSection from "@/components/PartnersSection";
+import GallerySection from "@/components/GallerySection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -19,6 +21,8 @@ const Index = () => {
       <TechnicalSection />
       <ExecutionSection />
       <ResultsSection />
+      <PartnersSection />
+      <GallerySection />
       <CtaSection />
       <Footer />
       <WhatsAppFloat />
