@@ -28,9 +28,8 @@ const Index = () => {
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="#problema" className={`${scrolled ? 'text-slate-600 hover:text-blue-600' : 'text-white/80 hover:text-white'} transition-colors`}>Desafios</a>
-            <a href="#solucao" className={`${scrolled ? 'text-slate-600 hover:text-blue-600' : 'text-white/80 hover:text-white'} transition-colors`}>Solução</a>
-            <a href="#tecnologia" className={`${scrolled ? 'text-slate-600 hover:text-blue-600' : 'text-white/80 hover:text-white'} transition-colors`}>Tecnologia</a>
-            <a href="#prova" className={`${scrolled ? 'text-slate-600 hover:text-blue-600' : 'text-white/80 hover:text-white'} transition-colors`}>Atuação</a>
+            <a href="#tecnologia" className={`${scrolled ? 'text-slate-600 hover:text-blue-600' : 'text-white/80 hover:text-white'} transition-colors`}>Solução e Tecnologia</a>
+            <a href="#prova" className={`${scrolled ? 'text-slate-600 hover:text-blue-600' : 'text-white/80 hover:text-white'} transition-colors`}>Resultados</a>
           </div>
           <a 
             href="https://wa.me/559891293421" 
