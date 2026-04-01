@@ -53,7 +53,7 @@ const Index = () => {
            <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[120px] mix-blend-screen pointer-events-none z-10 animate-pulse-glow" />
            <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-cyan-600/20 rounded-full blur-[150px] mix-blend-screen pointer-events-none z-10" />
 
-           <img src="https://www.telensat.com.br/images/jpg/painel/1/painel01.jpg" alt="Telensat em operação" className="w-full h-full object-cover object-center scale-105 opacity-50" />
+           <img src="https://www.telensat.com.br/images/jpg/servicos/3.jpg" alt="Telensat execução de serviços" className="w-full h-full object-cover object-center scale-105 opacity-50" />
         </div>
         
         <div className="container relative z-30 mx-auto px-6 max-w-7xl animate-fade-in">
