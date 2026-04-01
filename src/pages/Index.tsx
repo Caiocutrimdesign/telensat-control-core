@@ -43,53 +43,68 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-36 overflow-hidden bg-slate-950">
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-40 overflow-hidden bg-slate-950 flex items-center min-h-[90vh]">
         <div className="absolute inset-0 z-0">
            {/* Futuristic Grid overlay */}
            <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] z-20 pointer-events-none" />
-           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/90 to-slate-950 z-10" />
+           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-transparent z-20" />
+           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/50 z-20" />
            
            {/* Ambient Glows */}
-           <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[120px] mix-blend-screen pointer-events-none z-10 animate-pulse-glow" />
-           <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-cyan-600/20 rounded-full blur-[150px] mix-blend-screen pointer-events-none z-10" />
+           <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none z-10 animate-pulse-glow" />
+           <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-cyan-600/20 rounded-full blur-[150px] mix-blend-screen pointer-events-none z-10" />
 
-           <img src="https://www.telensat.com.br/images/jpg/servicos/3.jpg" alt="Telensat execução de serviços" className="w-full h-full object-cover object-center scale-105 opacity-50" />
+           <img src="https://www.telensat.com.br/images/jpg/servicos/3.jpg" alt="Telensat execução de serviços" className="absolute right-0 top-0 w-full md:w-2/3 h-full object-cover object-center scale-105 opacity-60 mix-blend-luminosity z-10" />
         </div>
         
         <div className="container relative z-30 mx-auto px-6 max-w-7xl animate-fade-in">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md shadow-[0_0_15px_rgba(6,182,212,0.15)]">
-              <span className="relative flex h-2 w-2">
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-slate-900/80 border border-cyan-500/40 text-cyan-400 text-xs font-bold uppercase tracking-[0.2em] mb-8 backdrop-blur-md shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+              <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500 shadow-[0_0_8px_rgba(6,182,212,1)]"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500 shadow-[0_0_8px_rgba(6,182,212,1)]"></span>
               </span>
-              Padrão de Exigência Vale
+              Operação de Alto Rigor Técnico
             </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tighter mb-6 drop-shadow-2xl">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight tracking-tighter mb-8 drop-shadow-2xl">
               Sua frota pronta para inspeção. <br className="hidden md:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 filter drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]">Sem erro. Sem risco.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-400 filter drop-shadow-[0_0_15px_rgba(56,189,248,0.4)]">Sem erro. Sem risco.</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
-              Não vendemos rastreadores. Entregamos controle total, segurança operacional e redução de prejuízos para operações de alto rigor técnico.
+            <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl leading-relaxed font-light border-l-4 border-cyan-500 pl-6 bg-gradient-to-r from-slate-900/50 to-transparent py-4">
+              Não vendemos rastreadores. Entregamos <span className="font-semibold text-white">controle total</span>, segurança operacional e redução de prejuízos para operações de alto rigor técnico.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://wa.me/559891293421" target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-blue-900/50 group">
-                Solicite uma Análise
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-col sm:flex-row gap-5 items-start">
+              <a 
+                href="https://wa.me/559891293421" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="group relative inline-flex justify-center items-center gap-3 px-10 py-5 bg-gradient-to-r from-cyan-600 to-blue-700 text-white font-bold text-lg rounded-2xl transition-all duration-500 shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:shadow-[0_0_50px_rgba(6,182,212,0.6)] hover:-translate-y-1 overflow-hidden pointer-events-auto"
+              >
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                <span className="relative flex items-center gap-3">
+                  Solicite uma Análise
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1.5 transition-transform" />
+                </span>
+              </a>
+              <a 
+                href="#tecnologia" 
+                className="inline-flex justify-center items-center gap-2 px-8 py-5 bg-slate-900/50 border border-slate-700 hover:border-slate-500 hover:bg-slate-800/80 text-white font-semibold rounded-2xl transition-all duration-300 backdrop-blur-sm shadow-xl pointer-events-auto"
+              >
+                Tecnologia Nível Vale
               </a>
             </div>
             
-            <div className="mt-12 flex items-center gap-6 text-sm text-slate-400 border-t border-slate-800 pt-8">
+            <div className="mt-12 flex items-center gap-6 text-sm text-slate-400 border-t border-slate-800 pt-8 pointer-events-auto">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                 <span>Integração Imediata</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-                <span>Dashboard em Tempo Real</span>
+                <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                <span>Pronto para Operações Mineração/Grãos</span>
               </div>
             </div>
           </div>
