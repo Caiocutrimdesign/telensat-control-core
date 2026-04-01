@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, ShieldCheck, Map, Activity, PhoneCall, TrendingDown, Zap, AlertTriangle, Eye, PlayCircle, Menu, X } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Map, Activity, PhoneCall, TrendingDown, Zap, AlertTriangle, Eye, PlayCircle, Menu, X, Thermometer, UserCheck, Satellite, PackageOpen, Truck, FileCheck, Brain } from "lucide-react";
 
 const Index = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -286,6 +286,103 @@ const Index = () => {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ecossistema de Serviços Integrados */}
+      <section id="servicos" className="py-24 bg-slate-950 relative border-t border-slate-900 overflow-hidden">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none" />
+        
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-cyan-500 font-bold tracking-widest uppercase text-xs mb-3 block">Ecossistema de Ponta a Ponta</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">Soluções integradas para <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">operações complexas</span></h2>
+            <p className="text-lg text-slate-400 font-light">Muito além do rastreamento básico. Entregamos a conectividade e o sensoriamento exigidos pelas maiores companhias do país.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            {/* 1. SENSOR DE FADIGA */}
+            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300 shadow-xl group">
+              <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform flex-shrink-0">
+                <Brain className="w-6 h-6" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-3">Sensor de Fadiga com IA</h4>
+              <p className="text-slate-400 text-sm font-light leading-relaxed">
+                Sistema avançado que detecta sonolência, distração, uso de celular e cigarro. Alertas sonoros na cabine em tempo real para prevenção de acidentes severos.
+              </p>
+            </div>
+
+            {/* 2. RASTREADOR SATELITAL */}
+            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300 shadow-xl group">
+              <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform flex-shrink-0">
+                <Satellite className="w-6 h-6" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-3">Rastreamento 100% Satelital</h4>
+              <p className="text-slate-400 text-sm font-light leading-relaxed">
+                Cobertura total no Brasil e América Latina, ideal para zonas rurais e de mineração sem sinal de celular. Operação imune a Jammer (bloqueador de sinal).
+              </p>
+            </div>
+
+            {/* 3. IDENTIFICADOR DE MOTORISTA */}
+            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300 shadow-xl group">
+              <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform flex-shrink-0">
+                <UserCheck className="w-6 h-6" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-3">Identificação de Motorista</h4>
+              <p className="text-slate-400 text-sm font-light leading-relaxed">
+                Controle de acesso via IButton ou Cartão RFID (Crachá). O veículo só liga com motorista autorizado, registrando toda a jornada e infrações por usuário.
+              </p>
+            </div>
+
+            {/* 4. TEMPERATURA */}
+            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300 shadow-xl group">
+              <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform flex-shrink-0">
+                <Thermometer className="w-6 h-6" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-3">Monitoramento Térmico</h4>
+              <p className="text-slate-400 text-sm font-light leading-relaxed">
+                Para câmaras refrigeradas e containers. Alertas na plataforma e por SMS caso a temperatura saia da faixa ideal definida para preservar a qualidade da carga.
+              </p>
+            </div>
+
+            {/* 5. ABERTURA DE PORTA BAÚ */}
+            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300 shadow-xl group">
+              <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform flex-shrink-0">
+                <PackageOpen className="w-6 h-6" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-3">Abertura de Porta Baú</h4>
+              <p className="text-slate-400 text-sm font-light leading-relaxed">
+                Sensores de alta precisão registram data, hora e local exato onde as portas do compartimento de carga foram abertas, coibindo furtos e desvios ao longo da rota.
+              </p>
+            </div>
+
+            {/* 6. ACIONAMENTO DE PLATAFORMA */}
+            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300 shadow-xl group">
+              <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform flex-shrink-0">
+                <Truck className="w-6 h-6" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-3">Controle de Implementos</h4>
+              <p className="text-slate-400 text-sm font-light leading-relaxed">
+                Mapeamento de guinchos e caminhões. Saiba exatamente onde e quando a prancha ou caçamba operou, garantindo total transparência nos serviços prestados.
+              </p>
+            </div>
+
+            {/* 7. MONITRIIP */}
+            <div className="md:col-span-2 lg:col-span-3 bg-gradient-to-r from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-8 hover:border-cyan-500/50 transition-all duration-300 shadow-xl flex flex-col md:flex-row items-center gap-8 group">
+              <div className="w-16 h-16 shrink-0 bg-blue-500/10 rounded-2xl flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+                <FileCheck className="w-8 h-8" />
+              </div>
+              <div>
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-3">Implantação do Sistema MONITRIIP</h4>
+                <p className="text-slate-400 text-sm font-light leading-relaxed max-w-4xl">
+                  Empresa homologada oficialmente pela <strong className="text-cyan-400">ANTT (Agência Nacional de Transportes Terrestres)</strong>.
+                  Implantamos o sistema de monitoramento para transporte rodoviário interestadual e internacional de passageiros, enviando os dados da viagem em tempo real diretamente para a agência reguladora, blindando juridicamente a operação da sua frota.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
