@@ -80,7 +80,7 @@ const Index = () => {
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-200">
       
       {/* Topbar (Informational) */}
-      <div className={`fixed top-0 w-full z-[60] bg-brand-primary text-white py-1.5 px-6 hidden md:flex items-center justify-between text-[11px] font-semibold tracking-wider uppercase transition-transform duration-300 ${scrolled ? '-translate-y-full' : 'translate-y-0 shadow-md border-b border-white/10'}`}>
+      <div className={`fixed top-0 w-full z-[60] bg-brand-primary text-white py-2 px-6 hidden md:flex items-center justify-between text-[11px] font-semibold tracking-wider uppercase transition-transform duration-300 ${scrolled ? '-translate-y-full' : 'translate-y-0 shadow-md border-b border-white/10'}`}>
         <div className="flex gap-8 items-center max-w-7xl mx-auto w-full">
           {/* Contatos */}
           <div className="flex items-center gap-8 flex-1">
@@ -97,7 +97,7 @@ const Index = () => {
           
           {/* Botão Rastreio & Idiomas */}
           <div className="flex items-center gap-6">
-            <a href="#" className="bg-white text-brand-primary hover:bg-slate-100 px-4 py-1 rounded-full flex items-center gap-2 transition shadow-sm drop-shadow-md font-bold text-[10px]">
+            <a href="#" className="bg-white text-brand-primary hover:bg-slate-100 px-4 py-1.5 rounded-full flex items-center gap-2 transition shadow-sm drop-shadow-md font-extrabold text-[10px]">
               <Map className="w-3.5 h-3.5" />
               {t('track')}
             </a>
@@ -113,7 +113,7 @@ const Index = () => {
       </div>
 
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'top-0 bg-white/95 backdrop-blur-md shadow-sm py-4 border-b border-slate-100' : 'top-0 md:top-[38px] bg-transparent py-6'}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'top-0 bg-white/95 backdrop-blur-md shadow-sm py-4 border-b border-slate-100' : 'top-0 md:top-[38px] bg-white/95 backdrop-blur-md shadow-sm py-5 border-b border-slate-200/50'}`}>
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between pointer-events-auto">
           <div className="flex items-center gap-2 relative z-50">
             <img 
@@ -164,24 +164,24 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 md:pt-48 md:pb-40 overflow-hidden bg-brand-neutral flex items-center min-h-[90vh]">
+      <section className="relative pt-[100px] md:pt-[130px] pb-20 md:pb-40 bg-brand-neutral flex flex-col justify-center min-h-[90vh]">
         {/* Ticker Informativo - Abaixo do Menu, rola com a página */}
-        <div className="absolute inset-x-0 top-20 md:top-24 z-40 bg-brand-primary text-white overflow-hidden flex border-y border-white/10 shadow-lg">
-          <div className="animate-marquee whitespace-nowrap flex w-max items-center py-2.5 group-hover:[animation-play-state:paused] ease-linear text-[10px] md:text-xs font-bold tracking-widest uppercase">
+        <div className="relative w-full z-40 bg-brand-primary text-white overflow-hidden flex border-y border-brand-primary/20 shadow-lg mb-12">
+          <div className="animate-marquee whitespace-nowrap flex w-max items-center py-3 hover:[animation-play-state:paused] ease-linear text-[10px] md:text-[11px] font-black tracking-widest uppercase">
             {[...Array(3)].map((_, i) => (
               <div key={i} className="flex items-center shrink-0">
-                <span className="px-6 mt-0.5">{t('coverage')}</span><span className="opacity-40">|</span>
-                <span className="px-6 mt-0.5">☎ 0800 591 9492</span><span className="opacity-40">|</span>
-                <span className="px-6 mt-0.5 flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-green-400"/> {t('guarantee')}</span><span className="opacity-40">|</span>
-                <span className="px-6 mt-0.5 flex items-center gap-2"><ShieldCheck className="w-3.5 h-3.5 text-blue-300"/> {t('fatigue')}</span><span className="opacity-40">|</span>
-                <span className="px-6 mt-0.5 flex items-center gap-2"><Eye className="w-3.5 h-3.5 text-blue-300"/> {t('videotech')}</span><span className="opacity-40">|</span>
-                <span className="px-6 mt-0.5 flex items-center gap-2"><Brain className="w-3.5 h-3.5 text-blue-300"/> {t('ai')}</span><span className="opacity-40">|</span>
+                <span className="px-8 mt-0.5">{t('coverage')}</span><span className="opacity-40">|</span>
+                <span className="px-8 mt-0.5 flex items-center gap-2"><PhoneCall className="w-3.5 h-3.5"/> 0800 591 9492</span><span className="opacity-40">|</span>
+                <span className="px-8 mt-0.5 flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-400"/> {t('guarantee')}</span><span className="opacity-40">|</span>
+                <span className="px-8 mt-0.5 flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-white"/> {t('fatigue')}</span><span className="opacity-40">|</span>
+                <span className="px-8 mt-0.5 flex items-center gap-2"><Eye className="w-4 h-4 text-white"/> {t('videotech')}</span><span className="opacity-40">|</span>
+                <span className="px-8 mt-0.5 flex items-center gap-2"><Brain className="w-4 h-4 text-white"/> {t('ai')}</span><span className="opacity-40">|</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="absolute inset-0 z-0 bg-slate-100">
+        <div className="absolute inset-0 z-0 bg-slate-100 overflow-hidden mt-[130px] md:mt-[168px]"> {/* mt applied to not overlap ticker visually */}
            {/* Light futuristic Grid overlay */}
            <div className="absolute inset-0 bg-[linear-gradient(to_right,#004A9910_1px,transparent_1px),linear-gradient(to_bottom,#004A9910_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] z-30 pointer-events-none" />
            <div className="absolute inset-0 bg-gradient-to-r from-brand-neutral/95 via-brand-neutral/80 to-brand-neutral/20 z-20" />
@@ -191,18 +191,8 @@ const Index = () => {
            <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-brand-primary/15 rounded-full blur-[120px] mix-blend-multiply pointer-events-none z-20 animate-pulse-glow" />
            <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[150px] mix-blend-multiply pointer-events-none z-20" />
 
-           {/* Webfleet-style Background Video */}
-           <video 
-             autoPlay 
-             loop 
-             muted 
-             playsInline 
-             className="absolute right-0 top-0 w-full h-full object-cover object-right z-10 opacity-70 mix-blend-multiply"
-             poster="https://www.telensat.com.br/images/jpg/galeria/11.jpg"
-           >
-             <source src="/video/videohero.mp4" type="video/mp4" />
-             <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" /> {/* Fallback provisório para evitar tela cinza na Lovable se /video/videohero n existir */}
-           </video>
+           {/* Original Image Background - As requested */}
+           <img src="https://www.telensat.com.br/images/jpg/galeria/11.jpg" alt="Telensat tecnologia automotiva" className="absolute right-0 top-0 w-full h-full object-cover object-right scale-105 opacity-30 mix-blend-multiply z-10 grayscale-[50%]" />
         </div>
         
         <div className="container relative z-30 mx-auto px-6 max-w-7xl animate-fade-in">
