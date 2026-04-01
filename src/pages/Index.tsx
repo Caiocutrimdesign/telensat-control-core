@@ -80,28 +80,28 @@ const Index = () => {
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-200">
       
       {/* Topbar (Informational) */}
-      <div className={`fixed top-0 w-full z-[60] bg-white/95 backdrop-blur-md text-slate-700 py-2 px-6 hidden md:flex items-center justify-between text-[11px] font-semibold tracking-wider uppercase transition-transform duration-300 ${scrolled ? '-translate-y-full' : 'translate-y-0 shadow-sm border-b border-slate-100'}`}>
+      <div className={`fixed top-0 w-full z-[60] bg-white/95 backdrop-blur-md text-slate-700 py-1 px-4 hidden md:flex items-center justify-between text-[11px] font-semibold tracking-wider uppercase transition-transform duration-300 ${scrolled ? '-translate-y-full' : 'translate-y-0 shadow-sm border-b border-slate-100'}`}>
         <div className="flex gap-8 items-center max-w-7xl mx-auto w-full">
           {/* Contatos */}
-          <div className="flex items-center gap-8 flex-1">
-            <div className="flex items-center gap-2">
+          <div className="flex items-center gap-6 flex-1">
+            <div className="flex items-center gap-1.5">
               <PhoneCall className="w-3.5 h-3.5 text-brand-primary" />
               <span className="opacity-80">{t('support')}</span>
               <a href="tel:9833044692" className="hover:text-brand-primary font-bold transition">(98) 3304-4692</a>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5">
               <span className="opacity-80">✉ E-mail:</span>
               <a href="mailto:atendimento@telensat.com.br" className="hover:text-brand-primary font-bold transition">atendimento@telensat.com.br</a>
             </div>
           </div>
           
           {/* Botão Rastreio & Idiomas */}
-          <div className="flex items-center gap-6">
-            <a href="#" className="bg-brand-primary text-white hover:bg-brand-primary/90 px-4 py-1.5 rounded-full flex items-center gap-2 transition shadow-sm drop-shadow-md font-extrabold text-[10px]">
-              <Map className="w-3.5 h-3.5" />
+          <div className="flex items-center gap-4">
+            <a href="#" className="bg-brand-primary text-white hover:bg-brand-primary/90 px-4 py-1 rounded-full flex items-center gap-2 transition shadow-sm drop-shadow-md font-extrabold text-[10px]">
+              <Map className="w-3 h-3" />
               {t('track')}
             </a>
-            <div className="flex gap-3 text-slate-400 items-center font-bold text-xs h-full">
+            <div className="flex gap-2 text-slate-400 items-center font-bold text-[10px] h-full">
               <button onClick={() => setLang('pt')} className={`transition-colors hover:text-brand-primary flex items-center gap-1 ${lang === 'pt' ? 'text-brand-primary underline underline-offset-4' : ''}`}>PT</button>
               <span>|</span>
               <button onClick={() => setLang('es')} className={`transition-colors hover:text-brand-primary flex items-center gap-1 ${lang === 'es' ? 'text-brand-primary underline underline-offset-4' : ''}`}>ES</button>
@@ -164,7 +164,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-[100px] md:pt-[130px] pb-20 md:pb-40 bg-brand-neutral flex flex-col justify-center min-h-[90vh]">
+      <section className="relative pt-[90px] md:pt-[110px] pb-12 md:pb-20 bg-brand-neutral flex flex-col justify-center min-h-[75vh]">
         {/* Ticker Informativo - Abaixo do Menu, rola com a página */}
         <div className="relative w-full z-40 bg-brand-primary text-white overflow-hidden flex border-y border-brand-primary/20 shadow-lg mb-12">
           <div className="animate-marquee whitespace-nowrap flex w-max items-center py-3 hover:[animation-play-state:paused] ease-linear text-[10px] md:text-[11px] font-black tracking-widest uppercase">
@@ -181,15 +181,15 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="absolute inset-0 z-0 bg-slate-100 overflow-hidden mt-[130px] md:mt-[168px]"> {/* mt applied to not overlap ticker visually */}
+        <div className="absolute inset-0 z-0 bg-slate-100 overflow-hidden mt-[120px] md:mt-[145px]"> {/* mt applied to not overlap ticker visually */}
            {/* Light futuristic Grid overlay */}
            <div className="absolute inset-0 bg-[linear-gradient(to_right,#004A9910_1px,transparent_1px),linear-gradient(to_bottom,#004A9910_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] z-30 pointer-events-none" />
-           <div className="absolute inset-0 bg-gradient-to-r from-brand-neutral/95 via-brand-neutral/80 to-brand-neutral/20 z-20" />
-           <div className="absolute inset-0 bg-gradient-to-t from-brand-neutral via-transparent to-brand-neutral/20 z-20" />
+           <div className="absolute inset-0 bg-gradient-to-r from-brand-neutral/95 via-brand-neutral/60 to-transparent z-20" />
+           <div className="absolute inset-0 bg-gradient-to-t from-brand-neutral via-transparent to-brand-neutral/10 z-20" />
            
            {/* Ambient Glows Light */}
-           <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-brand-primary/15 rounded-full blur-[120px] mix-blend-multiply pointer-events-none z-20 animate-pulse-glow" />
-           <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[150px] mix-blend-multiply pointer-events-none z-20" />
+           <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[120px] pointer-events-none z-20 animate-pulse-glow" />
+           <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[150px] pointer-events-none z-20" />
 
            {/* Local Video Background - As requested */}
            <video 
@@ -197,22 +197,22 @@ const Index = () => {
              loop 
              muted 
              playsInline 
-             className="absolute right-0 top-0 w-full h-full object-cover object-right z-10 opacity-70 mix-blend-multiply"
+             className="absolute right-0 top-0 w-full h-full object-cover object-right z-10 opacity-90"
              poster="https://www.telensat.com.br/images/jpg/galeria/11.jpg"
            >
              <source src="/VIDEO/videohero.mp4" type="video/mp4" />
            </video>
         </div>
         
-        <div className="container relative z-30 mx-auto px-6 max-w-7xl animate-fade-in">
+        <div className="container relative z-30 mx-auto px-6 max-w-7xl animate-fade-in mt-8 flex-1 flex flex-col justify-center">
           <div className="max-w-4xl">
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-brand-secondary leading-tight tracking-tighter mb-8 drop-shadow-sm">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-brand-secondary leading-tight tracking-tighter mb-6 drop-shadow-sm">
               {t('heroTitle1')} <br className="hidden md:block"/>
               <span className="text-brand-primary">{t('heroTitle2')}</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-slate-600 mb-12 max-w-2xl leading-relaxed font-light border-l-4 border-brand-primary pl-6 bg-gradient-to-r from-white/60 to-transparent py-4 backdrop-blur-sm rounded-r-2xl">
+            <p className="text-lg md:text-xl text-slate-800 font-medium mb-8 max-w-2xl leading-relaxed border-l-4 border-brand-primary pl-6 bg-white/70 backdrop-blur-md rounded-r-2xl py-4 shadow-sm">
               {t('heroDesc')}
             </p>
             
