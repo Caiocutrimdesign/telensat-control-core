@@ -20,9 +20,11 @@ const Index = () => {
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between pointer-events-auto">
           <div className="flex items-center gap-2">
-             {/* Replace with actual logo image later */}
-            <ShieldCheck className={`h-8 w-8 ${scrolled ? 'text-blue-900' : 'text-white'}`} />
-            <span className={`text-xl font-bold tracking-tight ${scrolled ? 'text-slate-900' : 'text-white'}`}>TELENSAT</span>
+            <img 
+              src="https://www.telensat.com.br/images/png/logo.png" 
+              alt="Telensat Logo" 
+              className={`h-10 transition-all duration-300 ${!scrolled && 'brightness-0 invert'}`}
+            />
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="#problema" className={`${scrolled ? 'text-slate-600 hover:text-blue-600' : 'text-white/80 hover:text-white'} transition-colors`}>Desafios</a>
@@ -85,6 +87,68 @@ const Index = () => {
                 <span>Dashboard em Tempo Real</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Clientes Parceiros */}
+      <section className="py-12 border-b border-slate-200 bg-white overflow-hidden">
+        <div className="container mx-auto px-6 max-w-7xl mb-6 text-center">
+          <p className="text-sm font-bold uppercase tracking-widest text-slate-400">Clientes Parceiros Telensat</p>
+        </div>
+        <div className="relative flex overflow-x-hidden group">
+          <div className="animate-marquee whitespace-nowrap flex items-center py-4">
+            {[
+              "https://www.telensat.com.br/images/png/parceiros/cedro.png",
+              "https://www.telensat.com.br/images/png/parceiros/eneva.png",
+              "https://www.telensat.com.br/images/png/parceiros/ght.png",
+              "https://www.telensat.com.br/images/png/parceiros/gmconsultoria.png",
+              "https://www.telensat.com.br/images/png/parceiros/grupo-equatorial.png",
+              "https://www.telensat.com.br/images/png/parceiros/hg.png",
+              "https://www.telensat.com.br/images/png/parceiros/ppl.png",
+              "https://www.telensat.com.br/images/png/parceiros/silva-sales.png",
+              "https://www.telensat.com.br/images/png/parceiros/tecnocar.png",
+              "https://www.telensat.com.br/images/png/parceiros/texeira-duarte.png",
+              "https://www.telensat.com.br/images/png/parceiros/tsa.png",
+              "https://www.telensat.com.br/images/png/parceiros/vale.png",
+              "https://www.telensat.com.br/images/png/parceiros/valeteck.png",
+              "https://www.telensat.com.br/images/png/parceiros/virtualx.png",
+              "https://www.telensat.com.br/images/png/parceiros/wms.png",
+            ].map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt="Parceiro"
+                className="h-12 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mx-10"
+              />
+            ))}
+          </div>
+          {/* Duplicate for infinite scroll effect */}
+          <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center py-4">
+            {[
+              "https://www.telensat.com.br/images/png/parceiros/cedro.png",
+              "https://www.telensat.com.br/images/png/parceiros/eneva.png",
+              "https://www.telensat.com.br/images/png/parceiros/ght.png",
+              "https://www.telensat.com.br/images/png/parceiros/gmconsultoria.png",
+              "https://www.telensat.com.br/images/png/parceiros/grupo-equatorial.png",
+              "https://www.telensat.com.br/images/png/parceiros/hg.png",
+              "https://www.telensat.com.br/images/png/parceiros/ppl.png",
+              "https://www.telensat.com.br/images/png/parceiros/silva-sales.png",
+              "https://www.telensat.com.br/images/png/parceiros/tecnocar.png",
+              "https://www.telensat.com.br/images/png/parceiros/texeira-duarte.png",
+              "https://www.telensat.com.br/images/png/parceiros/tsa.png",
+              "https://www.telensat.com.br/images/png/parceiros/vale.png",
+              "https://www.telensat.com.br/images/png/parceiros/valeteck.png",
+              "https://www.telensat.com.br/images/png/parceiros/virtualx.png",
+              "https://www.telensat.com.br/images/png/parceiros/wms.png",
+            ].map((src, i) => (
+              <img
+                key={`dup-${i}`}
+                src={src}
+                alt="Parceiro"
+                className="h-12 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 mx-10"
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -233,8 +297,11 @@ const Index = () => {
       <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
         <div className="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="h-6 w-6 text-slate-500" />
-            <span className="text-lg font-bold tracking-tight text-white">TELENSAT</span>
+            <img 
+              src="https://www.telensat.com.br/images/png/logo.png" 
+              alt="Telensat Logo" 
+              className="h-8 brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+            />
           </div>
           <div className="text-sm">
             © 2026 Telensat. Todos os direitos reservados.
