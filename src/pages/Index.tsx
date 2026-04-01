@@ -80,33 +80,33 @@ const Index = () => {
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-200">
       
       {/* Topbar (Informational) */}
-      <div className={`fixed top-0 w-full z-[60] bg-brand-primary text-white py-2 px-6 hidden md:flex items-center justify-between text-[11px] font-semibold tracking-wider uppercase transition-transform duration-300 ${scrolled ? '-translate-y-full' : 'translate-y-0 shadow-md border-b border-white/10'}`}>
+      <div className={`fixed top-0 w-full z-[60] bg-white/95 backdrop-blur-md text-slate-700 py-2 px-6 hidden md:flex items-center justify-between text-[11px] font-semibold tracking-wider uppercase transition-transform duration-300 ${scrolled ? '-translate-y-full' : 'translate-y-0 shadow-sm border-b border-slate-100'}`}>
         <div className="flex gap-8 items-center max-w-7xl mx-auto w-full">
           {/* Contatos */}
           <div className="flex items-center gap-8 flex-1">
             <div className="flex items-center gap-2">
-              <PhoneCall className="w-3.5 h-3.5" />
+              <PhoneCall className="w-3.5 h-3.5 text-brand-primary" />
               <span className="opacity-80">{t('support')}</span>
-              <a href="tel:9833044692" className="hover:text-blue-200 transition">(98) 3304-4692</a>
+              <a href="tel:9833044692" className="hover:text-brand-primary font-bold transition">(98) 3304-4692</a>
             </div>
             <div className="flex items-center gap-2">
               <span className="opacity-80">✉ E-mail:</span>
-              <a href="mailto:atendimento@telensat.com.br" className="hover:text-blue-200 transition">atendimento@telensat.com.br</a>
+              <a href="mailto:atendimento@telensat.com.br" className="hover:text-brand-primary font-bold transition">atendimento@telensat.com.br</a>
             </div>
           </div>
           
           {/* Botão Rastreio & Idiomas */}
           <div className="flex items-center gap-6">
-            <a href="#" className="bg-white text-brand-primary hover:bg-slate-100 px-4 py-1.5 rounded-full flex items-center gap-2 transition shadow-sm drop-shadow-md font-extrabold text-[10px]">
+            <a href="#" className="bg-brand-primary text-white hover:bg-brand-primary/90 px-4 py-1.5 rounded-full flex items-center gap-2 transition shadow-sm drop-shadow-md font-extrabold text-[10px]">
               <Map className="w-3.5 h-3.5" />
               {t('track')}
             </a>
-            <div className="flex gap-3 text-white/50 items-center font-bold text-xs">
-              <button onClick={() => setLang('pt')} className={`transition-colors hover:text-white flex items-center gap-1 ${lang === 'pt' ? 'text-white underline underline-offset-4' : ''}`}>PT</button>
+            <div className="flex gap-3 text-slate-400 items-center font-bold text-xs h-full">
+              <button onClick={() => setLang('pt')} className={`transition-colors hover:text-brand-primary flex items-center gap-1 ${lang === 'pt' ? 'text-brand-primary underline underline-offset-4' : ''}`}>PT</button>
               <span>|</span>
-              <button onClick={() => setLang('es')} className={`transition-colors hover:text-white flex items-center gap-1 ${lang === 'es' ? 'text-white underline underline-offset-4' : ''}`}>ES</button>
+              <button onClick={() => setLang('es')} className={`transition-colors hover:text-brand-primary flex items-center gap-1 ${lang === 'es' ? 'text-brand-primary underline underline-offset-4' : ''}`}>ES</button>
               <span>|</span>
-              <button onClick={() => setLang('en')} className={`transition-colors hover:text-white flex items-center gap-1 ${lang === 'en' ? 'text-white underline underline-offset-4' : ''}`}>EN</button>
+              <button onClick={() => setLang('en')} className={`transition-colors hover:text-brand-primary flex items-center gap-1 ${lang === 'en' ? 'text-brand-primary underline underline-offset-4' : ''}`}>EN</button>
             </div>
           </div>
         </div>
