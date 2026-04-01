@@ -191,8 +191,17 @@ const Index = () => {
            <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-brand-primary/15 rounded-full blur-[120px] mix-blend-multiply pointer-events-none z-20 animate-pulse-glow" />
            <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[150px] mix-blend-multiply pointer-events-none z-20" />
 
-           {/* Original Image Background - As requested */}
-           <img src="https://www.telensat.com.br/images/jpg/galeria/11.jpg" alt="Telensat tecnologia automotiva" className="absolute right-0 top-0 w-full h-full object-cover object-right scale-105 opacity-30 mix-blend-multiply z-10 grayscale-[50%]" />
+           {/* Local Video Background - As requested */}
+           <video 
+             autoPlay 
+             loop 
+             muted 
+             playsInline 
+             className="absolute right-0 top-0 w-full h-full object-cover object-right z-10 opacity-70 mix-blend-multiply"
+             poster="https://www.telensat.com.br/images/jpg/galeria/11.jpg"
+           >
+             <source src="/VIDEO/videohero.mp4" type="video/mp4" />
+           </video>
         </div>
         
         <div className="container relative z-30 mx-auto px-6 max-w-7xl animate-fade-in">
