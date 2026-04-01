@@ -69,18 +69,45 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-40 overflow-hidden bg-brand-neutral flex items-center min-h-[90vh]">
-        <div className="absolute inset-0 z-0">
+      <section className="relative pt-40 pb-20 md:pt-48 md:pb-40 overflow-hidden bg-brand-neutral flex items-center min-h-[90vh]">
+        {/* Ticker Informativo - Abaixo do Menu, rola com a página */}
+        <div className="absolute inset-x-0 top-20 md:top-24 z-40 bg-brand-primary text-white overflow-hidden flex border-y border-white/10 shadow-lg">
+          <div className="animate-marquee whitespace-nowrap flex w-max items-center py-2.5 group-hover:[animation-play-state:paused] ease-linear text-[10px] md:text-xs font-bold tracking-widest uppercase">
+            {[...Array(3)].map((_, i) => (
+              <div key={i} className="flex items-center shrink-0">
+                <span className="px-6 mt-0.5">Cobertura Nacional</span><span className="opacity-40">|</span>
+                <span className="px-6 mt-0.5">☎ 0800 591 9492</span><span className="opacity-40">|</span>
+                <span className="px-6 mt-0.5 flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-green-400"/> Aprovação Garantida na Vistoria Vale</span><span className="opacity-40">|</span>
+                <span className="px-6 mt-0.5 flex items-center gap-2"><ShieldCheck className="w-3.5 h-3.5 text-blue-300"/> Sensor de Fadiga Exclusivo</span><span className="opacity-40">|</span>
+                <span className="px-6 mt-0.5 flex items-center gap-2"><Eye className="w-3.5 h-3.5 text-blue-300"/> Vídeo Telemetria Antidesvio</span><span className="opacity-40">|</span>
+                <span className="px-6 mt-0.5 flex items-center gap-2"><Brain className="w-3.5 h-3.5 text-blue-300"/> Inteligência Artificial</span><span className="opacity-40">|</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="absolute inset-0 z-0 bg-slate-100">
            {/* Light futuristic Grid overlay */}
-           <div className="absolute inset-0 bg-[linear-gradient(to_right,#004A9910_1px,transparent_1px),linear-gradient(to_bottom,#004A9910_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] z-20 pointer-events-none" />
-           <div className="absolute inset-0 bg-gradient-to-r from-brand-neutral/95 via-brand-neutral/70 to-brand-neutral/10 z-20" />
+           <div className="absolute inset-0 bg-[linear-gradient(to_right,#004A9910_1px,transparent_1px),linear-gradient(to_bottom,#004A9910_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] z-30 pointer-events-none" />
+           <div className="absolute inset-0 bg-gradient-to-r from-brand-neutral/95 via-brand-neutral/80 to-brand-neutral/20 z-20" />
            <div className="absolute inset-0 bg-gradient-to-t from-brand-neutral via-transparent to-brand-neutral/20 z-20" />
            
            {/* Ambient Glows Light */}
-           <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-brand-primary/15 rounded-full blur-[120px] mix-blend-multiply pointer-events-none z-10 animate-pulse-glow" />
-           <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[150px] mix-blend-multiply pointer-events-none z-10" />
+           <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-brand-primary/15 rounded-full blur-[120px] mix-blend-multiply pointer-events-none z-20 animate-pulse-glow" />
+           <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[150px] mix-blend-multiply pointer-events-none z-20" />
 
-           <img src="https://www.telensat.com.br/images/jpg/galeria/11.jpg" alt="Telensat tecnologia automotiva" className="absolute right-0 top-0 w-full h-full object-cover object-right scale-105 opacity-30 mix-blend-multiply z-10 grayscale-[50%]" />
+           {/* Webfleet-style Background Video */}
+           <video 
+             autoPlay 
+             loop 
+             muted 
+             playsInline 
+             className="absolute right-0 top-0 w-full h-full object-cover object-right z-10 opacity-70 mix-blend-multiply"
+             poster="https://www.telensat.com.br/images/jpg/galeria/11.jpg"
+           >
+             <source src="/video/videohero.mp4" type="video/mp4" />
+             <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" /> {/* Fallback provisório para evitar tela cinza na Lovable se /video/videohero n existir */}
+           </video>
         </div>
         
         <div className="container relative z-30 mx-auto px-6 max-w-7xl animate-fade-in">
