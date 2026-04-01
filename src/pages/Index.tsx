@@ -90,8 +90,8 @@ const Index = () => {
       </section>
 
       {/* Clientes Parceiros */}
-      <section className="py-12 border-b border-slate-200 bg-white overflow-hidden">
-        <div className="container mx-auto px-6 max-w-7xl mb-6 text-center">
+      <section className="py-6 border-y border-slate-200 bg-white overflow-hidden">
+        <div className="container mx-auto px-6 max-w-7xl mb-4 text-center">
           <p className="text-sm font-bold uppercase tracking-widest text-slate-400">Clientes Parceiros Telensat</p>
         </div>
         <div className="relative flex overflow-x-hidden group">
