@@ -1,6 +1,6 @@
 import { useParams, Navigate, Link } from "react-router-dom";
 import { servicesItems } from "@/data/servicesData";
-import { ArrowLeft, CheckCircle2, ChevronRight, PhoneCall, Zap, ShieldCheck, Globe, Star } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ChevronRight, PhoneCall, Zap, ShieldCheck, Globe, Star, Settings, Battery } from "lucide-react";
 import { motion } from "framer-motion";
 
 const ServiceDetail = () => {
@@ -84,14 +84,15 @@ const ServiceDetail = () => {
       </section>
 
       {/* Destaques Técnicos (Grids) */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 max-w-7xl">
+      <section className="py-24 bg-white relative">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-black text-brand-secondary tracking-tight mb-4">Engenharia de Ponta</h2>
-            <p className="text-lg text-slate-500 font-light italic">Especificações detalhadas para operações de alta complexidade.</p>
+            <h2 className="text-3xl md:text-5xl font-black text-brand-secondary tracking-tight mb-4">Engenharia de Aplicação</h2>
+            <p className="text-lg text-slate-500 font-light italic">Dossiê técnico completo para suporte à decisão B2B.</p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             {service.sections.map((section, idx) => (
               <motion.div 
                 key={idx}
@@ -99,15 +100,41 @@ const ServiceDetail = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="p-10 rounded-3xl bg-brand-neutral/30 border border-slate-100 hover:border-brand-primary/20 transition-all duration-500 hover:shadow-xl group"
+                className="p-10 rounded-[40px] bg-brand-neutral/40 border border-slate-100 hover:border-brand-primary/20 transition-all duration-500 hover:shadow-2xl hover:bg-white group"
               >
-                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-brand-primary mb-8 shadow-sm group-hover:scale-110 group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
-                  <section.icon className="w-7 h-7" />
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-brand-primary mb-8 shadow-sm group-hover:scale-110 group-hover:bg-brand-primary group-hover:text-white transition-all duration-500">
+                  <section.icon className="w-8 h-8" />
                 </div>
-                <h4 className="text-xl font-bold text-brand-secondary mb-4 tracking-tight">{section.title}</h4>
-                <p className="text-slate-600 leading-relaxed font-light">{section.content}</p>
+                <h4 className="text-2xl font-bold text-brand-secondary mb-5 tracking-tight">{section.title}</h4>
+                <p className="text-slate-600 leading-relaxed font-light text-lg">{section.content}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Specifications Table */}
+      <section className="py-24 bg-brand-neutral/20 border-y border-slate-100">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="bg-white rounded-[40px] shadow-2xl border border-slate-100 overflow-hidden">
+             <div className="bg-brand-primary p-8 text-white">
+                <h3 className="text-2xl font-bold flex items-center gap-3">
+                  <Settings className="w-6 h-6" /> Ficha Técnica do Hardware
+                </h3>
+             </div>
+             <div className="p-8 md:p-12">
+               <div className="space-y-6">
+                 {service.specs.map((spec, idx) => {
+                   const [label, value] = spec.split(": ");
+                   return (
+                     <div key={idx} className="flex flex-col md:flex-row md:items-center justify-between py-4 border-b border-slate-50 last:border-0 hover:bg-slate-50 transition-colors px-4 rounded-xl">
+                        <span className="text-slate-500 font-medium uppercase tracking-widest text-xs mb-2 md:mb-0">{label}</span>
+                        <span className="text-brand-secondary font-black text-lg">{value}</span>
+                     </div>
+                   );
+                 })}
+               </div>
+             </div>
           </div>
         </div>
       </section>
@@ -118,9 +145,9 @@ const ServiceDetail = () => {
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="flex-1">
-               <span className="text-brand-primary font-black uppercase tracking-[0.3em] text-xs mb-6 block">Checklist de Recursos</span>
-               <h2 className="text-3xl md:text-5xl font-black mb-10 leading-tight tracking-tight">O que está incluso na <br />solução <span className="text-brand-primary">Full Service</span>.</h2>
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+               <span className="text-brand-primary font-black uppercase tracking-[0.3em] text-xs mb-6 block">Recursos Adicionais Inclusos</span>
+               <h2 className="text-3xl md:text-5xl font-black mb-10 leading-tight tracking-tight">Solução <span className="text-brand-primary">Full Service</span> Protegida.</h2>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                  {service.features.map((feature, idx) => (
                    <motion.div 
                     key={idx}
@@ -128,12 +155,12 @@ const ServiceDetail = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
                     viewport={{ once: true }}
-                    className="flex items-center gap-4 group"
+                    className="flex items-start gap-4 group"
                    >
-                     <div className="w-8 h-8 rounded-full bg-brand-primary/20 flex items-center justify-center group-hover:bg-brand-primary transition-colors">
-                       <CheckCircle2 className="w-4 h-4 text-brand-primary group-hover:text-white" />
+                     <div className="shrink-0 w-6 h-6 rounded-full bg-brand-primary/20 flex items-center justify-center group-hover:bg-brand-primary transition-colors mt-1">
+                       <CheckCircle2 className="w-3.5 h-3.5 text-brand-primary group-hover:text-white" />
                      </div>
-                     <span className="text-slate-300 font-light group-hover:text-white transition-colors">{feature}</span>
+                     <span className="text-slate-300 font-light text-lg leading-snug group-hover:text-white transition-colors">{feature}</span>
                    </motion.div>
                  ))}
                </div>
