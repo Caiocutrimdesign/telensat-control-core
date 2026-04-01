@@ -132,9 +132,24 @@ const Index = () => {
 
       {/* Clientes Parceiros Ticker */}
       <section className="py-6 border-y border-slate-200 bg-white overflow-hidden relative z-40 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-        <div className="relative flex overflow-x-hidden group">
-          <div className="animate-marquee whitespace-nowrap flex items-center py-2">
+        <div className="relative flex overflow-hidden group">
+          <div className="animate-marquee whitespace-nowrap flex w-max items-center py-2 group-hover:[animation-play-state:paused] ease-linear">
             {[
+              "https://www.telensat.com.br/images/png/parceiros/cedro.png",
+              "https://www.telensat.com.br/images/png/parceiros/eneva.png",
+              "https://www.telensat.com.br/images/png/parceiros/ght.png",
+              "https://www.telensat.com.br/images/png/parceiros/gmconsultoria.png",
+              "https://www.telensat.com.br/images/png/parceiros/grupo-equatorial.png",
+              "https://www.telensat.com.br/images/png/parceiros/hg.png",
+              "https://www.telensat.com.br/images/png/parceiros/ppl.png",
+              "https://www.telensat.com.br/images/png/parceiros/silva-sales.png",
+              "https://www.telensat.com.br/images/png/parceiros/tecnocar.png",
+              "https://www.telensat.com.br/images/png/parceiros/texeira-duarte.png",
+              "https://www.telensat.com.br/images/png/parceiros/tsa.png",
+              "https://www.telensat.com.br/images/png/parceiros/vale.png",
+              "https://www.telensat.com.br/images/png/parceiros/valeteck.png",
+              "https://www.telensat.com.br/images/png/parceiros/virtualx.png",
+              "https://www.telensat.com.br/images/png/parceiros/wms.png",
               "https://www.telensat.com.br/images/png/parceiros/cedro.png",
               "https://www.telensat.com.br/images/png/parceiros/eneva.png",
               "https://www.telensat.com.br/images/png/parceiros/ght.png",
@@ -152,37 +167,10 @@ const Index = () => {
               "https://www.telensat.com.br/images/png/parceiros/wms.png",
             ].map((src, i) => (
               <img
-                key={i}
+                key={`logo-${i}`}
                 src={src}
                 alt="Parceiro"
-                className="h-8 md:h-12 w-auto min-w-[100px] max-w-[140px] object-contain flex-shrink-0 opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-xl transition-all duration-300 mx-8 filter hover:brightness-110 contrast-125"
-              />
-            ))}
-          </div>
-          
-          <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center py-2 h-full">
-            {[
-              "https://www.telensat.com.br/images/png/parceiros/cedro.png",
-              "https://www.telensat.com.br/images/png/parceiros/eneva.png",
-              "https://www.telensat.com.br/images/png/parceiros/ght.png",
-              "https://www.telensat.com.br/images/png/parceiros/gmconsultoria.png",
-              "https://www.telensat.com.br/images/png/parceiros/grupo-equatorial.png",
-              "https://www.telensat.com.br/images/png/parceiros/hg.png",
-              "https://www.telensat.com.br/images/png/parceiros/ppl.png",
-              "https://www.telensat.com.br/images/png/parceiros/silva-sales.png",
-              "https://www.telensat.com.br/images/png/parceiros/tecnocar.png",
-              "https://www.telensat.com.br/images/png/parceiros/texeira-duarte.png",
-              "https://www.telensat.com.br/images/png/parceiros/tsa.png",
-              "https://www.telensat.com.br/images/png/parceiros/vale.png",
-              "https://www.telensat.com.br/images/png/parceiros/valeteck.png",
-              "https://www.telensat.com.br/images/png/parceiros/virtualx.png",
-              "https://www.telensat.com.br/images/png/parceiros/wms.png",
-            ].map((src, i) => (
-              <img
-                key={`dup-${i}`}
-                src={src}
-                alt="Parceiro"
-                className="h-8 md:h-12 w-auto min-w-[100px] max-w-[140px] object-contain flex-shrink-0 opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-xl transition-all duration-300 mx-8 filter hover:brightness-110 contrast-125"
+                className="h-8 md:h-12 w-auto min-w-[100px] max-w-[140px] px-8 object-contain flex-shrink-0 opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-xl transition-all duration-300 filter hover:brightness-110 contrast-125"
               />
             ))}
           </div>
