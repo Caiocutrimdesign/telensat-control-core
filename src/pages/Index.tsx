@@ -404,19 +404,32 @@ const Index = () => {
             </div>
 
             {/* 7. SmartOne C & Satellite Integration */}
-            <div className="group bg-brand-primary rounded-3xl p-6 shadow-2xl hover:shadow-brand-primary/40 transition-all duration-500 border border-blue-800 flex flex-col items-center text-center hover:-translate-y-2 sm:col-span-2 lg:col-span-2 overflow-hidden relative">
+            {/* 7. SmartOne C & Satellite Integration - Improved Visibility */}
+            <div className="group bg-brand-primary rounded-3xl p-8 md:p-10 shadow-2xl hover:shadow-brand-primary/40 transition-all duration-500 border border-blue-800 flex flex-col lg:flex-row items-center gap-8 lg:gap-12 sm:col-span-2 lg:col-span-2 overflow-hidden relative">
               <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/15 transition-all duration-700 pointer-events-none" />
-              <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-500 border border-white/20">
-                <Satellite className="w-8 h-8" />
+              
+              <div className="flex-1 text-center lg:text-left z-10">
+                <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-500 border border-white/20 mx-auto lg:mx-0">
+                  <Satellite className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">Comunicação Satelital</h3>
+                <p className="text-blue-100 text-base leading-relaxed font-light mb-8 max-w-md">Cobertura absoluta para veículos, barcos e máquinas agrícolas imunes a Jammer em toda LA.</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full text-white text-[11px] uppercase font-black tracking-widest">
+                  <div className="flex items-center gap-3 bg-blue-900/50 p-3 rounded-lg border border-blue-800"><CheckCircle2 className="w-4 h-4 text-blue-300" /> 100% Satelital</div>
+                  <div className="flex items-center gap-3 bg-blue-900/50 p-3 rounded-lg border border-blue-800"><CheckCircle2 className="w-4 h-4 text-blue-300" /> Imune a Jammer</div>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">Comunicação Satelital</h3>
-              <p className="text-blue-100 text-sm leading-relaxed font-light mb-6">Cobertura absoluta para veículos, barcos e máquinas agrícolas imunes a Jammer em toda LA.</p>
-              <div className="grid grid-cols-2 gap-4 w-full text-white text-[10px] uppercase font-black tracking-widest">
-                <div className="flex items-center gap-2 bg-blue-900/50 p-2 rounded-lg border border-blue-800"><CheckCircle2 className="w-3 h-3 text-blue-300" /> 100% Satelital</div>
-                <div className="flex items-center gap-2 bg-blue-900/50 p-2 rounded-lg border border-blue-800"><CheckCircle2 className="w-3 h-3 text-blue-300" /> Zero Jammer</div>
-              </div>
-              <div className="mt-auto pt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <img src="https://www.telensat.com.br/images/jpg/servicos/7.jpg" className="w-full h-32 object-cover rounded-xl shadow-inner border border-blue-800" alt="Satelite" />
+
+              <div className="flex-1 w-full lg:w-1/2 h-64 lg:h-80 relative z-10 transition-all duration-700 group-hover:scale-105">
+                <div className="absolute inset-0 bg-blue-900/30 rounded-2xl blur-3xl opacity-50 group-hover:opacity-70 transition-opacity" />
+                <img 
+                  src="https://www.telensat.com.br/images/jpg/servicos/7.jpg" 
+                  className="w-full h-full object-contain object-center rounded-2xl drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-700" 
+                  alt="Satelite SmartOne C" 
+                />
+                <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/10 text-center text-[10px] text-blue-100 uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                  SmartOne C - Tecnologia Satelital
+                </div>
               </div>
             </div>
           </div>
