@@ -1,10 +1,72 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, ShieldCheck, Map, Activity, PhoneCall, TrendingDown, Zap, AlertTriangle, Eye, PlayCircle, Menu, X, Thermometer, UserCheck, Satellite, PackageOpen, Truck, FileCheck, Brain } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Map, Activity, PhoneCall, TrendingDown, Zap, AlertTriangle, Eye, PlayCircle, Menu, X, Thermometer, UserCheck, Satellite, PackageOpen, Truck, FileCheck, Brain, Globe2 } from "lucide-react";
+
+type Language = "pt" | "en" | "es";
+
+const translations = {
+  pt: {
+    support: "Suporte / Vendas:",
+    track: "RASTREIE SUA ROTA",
+    challenges: "Desafios",
+    tech: "Solução e Tecnologia",
+    auth: "Autoridade",
+    contact: "Fale Conosco",
+    heroTitle1: "Sua frota pronta para inspeção.",
+    heroTitle2: "Sem erro. Sem risco.",
+    heroDesc: "Não vendemos rastreadores. Entregamos controle total, segurança operacional e redução de prejuízos para operações de alto rigor técnico.",
+    reqAnalysis: "Solicite uma Análise",
+    valetech: "Tecnologia Nível Vale",
+    coverage: "Cobertura Nacional",
+    guarantee: "Aprovação Garantida na Vistoria Vale",
+    fatigue: "Sensor de Fadiga Exclusivo",
+    videotech: "Vídeo Telemetria Antidesvio",
+    ai: "Inteligência Artificial"
+  },
+  en: {
+    support: "Support / Sales:",
+    track: "TRACK YOUR ROUTE",
+    challenges: "Challenges",
+    tech: "Solution & Tech",
+    auth: "Authority",
+    contact: "Contact Us",
+    heroTitle1: "Your fleet ready for inspection.",
+    heroTitle2: "No errors. No risks.",
+    heroDesc: "We don't sell trackers. We deliver full control, operational security, and loss reduction for high-rigor technical operations.",
+    reqAnalysis: "Request Analysis",
+    valetech: "Vale-Level Technology",
+    coverage: "National Coverage",
+    guarantee: "Guaranteed passing on Vale Inspection",
+    fatigue: "Exclusive Fatigue Sensor",
+    videotech: "Anti-deviation Video Telemetry",
+    ai: "Artificial Intelligence"
+  },
+  es: {
+    support: "Soporte / Ventas:",
+    track: "RASTREA TU RUTA",
+    challenges: "Desafíos",
+    tech: "Solución y Tecnología",
+    auth: "Autoridad",
+    contact: "Contáctenos",
+    heroTitle1: "Su flota lista para inspección.",
+    heroTitle2: "Sin errores. Sin riesgos.",
+    heroDesc: "No vendemos rastreadores. Entregamos control total, seguridad operativa y reducción de pérdidas para operaciones de alto rigor técnico.",
+    reqAnalysis: "Solicitar un Análisis",
+    valetech: "Tecnología Nivel Vale",
+    coverage: "Cobertura Nacional",
+    guarantee: "Aprobación Garantizada en Inspección Vale",
+    fatigue: "Sensor de Fatiga Exclusivo",
+    videotech: "Video Telemetría Antidesvío",
+    ai: "Inteligencia Artificial"
+  }
+};
 
 const Index = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [lang, setLang] = useState<Language>("pt");
+
+  const t = (key: keyof typeof translations.pt) => translations[lang][key];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,8 +79,41 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-200">
       
+      {/* Topbar (Informational) */}
+      <div className={`fixed top-0 w-full z-[60] bg-brand-primary text-white py-1.5 px-6 hidden md:flex items-center justify-between text-[11px] font-semibold tracking-wider uppercase transition-transform duration-300 ${scrolled ? '-translate-y-full' : 'translate-y-0 shadow-md border-b border-white/10'}`}>
+        <div className="flex gap-8 items-center max-w-7xl mx-auto w-full">
+          {/* Contatos */}
+          <div className="flex items-center gap-8 flex-1">
+            <div className="flex items-center gap-2">
+              <PhoneCall className="w-3.5 h-3.5" />
+              <span className="opacity-80">{t('support')}</span>
+              <a href="tel:9833044692" className="hover:text-blue-200 transition">(98) 3304-4692</a>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="opacity-80">✉ E-mail:</span>
+              <a href="mailto:atendimento@telensat.com.br" className="hover:text-blue-200 transition">atendimento@telensat.com.br</a>
+            </div>
+          </div>
+          
+          {/* Botão Rastreio & Idiomas */}
+          <div className="flex items-center gap-6">
+            <a href="#" className="bg-white text-brand-primary hover:bg-slate-100 px-4 py-1 rounded-full flex items-center gap-2 transition shadow-sm drop-shadow-md font-bold text-[10px]">
+              <Map className="w-3.5 h-3.5" />
+              {t('track')}
+            </a>
+            <div className="flex gap-3 text-white/50 items-center font-bold text-xs">
+              <button onClick={() => setLang('pt')} className={`transition-colors hover:text-white flex items-center gap-1 ${lang === 'pt' ? 'text-white underline underline-offset-4' : ''}`}>PT</button>
+              <span>|</span>
+              <button onClick={() => setLang('es')} className={`transition-colors hover:text-white flex items-center gap-1 ${lang === 'es' ? 'text-white underline underline-offset-4' : ''}`}>ES</button>
+              <span>|</span>
+              <button onClick={() => setLang('en')} className={`transition-colors hover:text-white flex items-center gap-1 ${lang === 'en' ? 'text-white underline underline-offset-4' : ''}`}>EN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-4 border-b border-slate-100' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'top-0 bg-white/95 backdrop-blur-md shadow-sm py-4 border-b border-slate-100' : 'top-0 md:top-[38px] bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between pointer-events-auto">
           <div className="flex items-center gap-2 relative z-50">
             <img 
@@ -29,9 +124,9 @@ const Index = () => {
           </div>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#problema" className="text-brand-secondary hover:text-brand-primary transition-colors">Desafios</a>
-            <a href="#tecnologia" className="text-brand-secondary hover:text-brand-primary transition-colors">Solução e Tecnologia</a>
-            <a href="#autoridade" className="text-brand-secondary hover:text-brand-primary transition-colors">Autoridade</a>
+            <a href="#problema" className="text-brand-secondary hover:text-brand-primary transition-colors">{t('challenges')}</a>
+            <a href="#tecnologia" className="text-brand-secondary hover:text-brand-primary transition-colors">{t('tech')}</a>
+            <a href="#autoridade" className="text-brand-secondary hover:text-brand-primary transition-colors">{t('auth')}</a>
           </div>
           
           <a 
@@ -40,7 +135,7 @@ const Index = () => {
             rel="noopener noreferrer"
             className="hidden md:flex px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-md items-center gap-2 bg-brand-primary text-white hover:bg-brand-primary/90 hover:shadow-lg hover:-translate-y-0.5"
           >
-            Fale Conosco
+            {t('contact')}
           </a>
 
           {/* Mobile Toggle */}
@@ -55,14 +150,14 @@ const Index = () => {
         {/* Mobile Menu Dropdown */}
         <div className={`md:hidden fixed inset-0 top-0 pt-28 bg-white/95 backdrop-blur-xl z-40 transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="px-6 py-8 flex flex-col gap-8 items-center text-center">
-            <a onClick={() => setMobileMenuOpen(false)} href="#problema" className="text-xl font-bold text-brand-secondary hover:text-brand-primary uppercase tracking-widest">Desafios</a>
-            <a onClick={() => setMobileMenuOpen(false)} href="#tecnologia" className="text-xl font-bold text-brand-secondary hover:text-brand-primary uppercase tracking-widest">Solução e Tecnologia</a>
-            <a onClick={() => setMobileMenuOpen(false)} href="#autoridade" className="text-xl font-bold text-brand-secondary hover:text-brand-primary uppercase tracking-widest">Autoridade</a>
+            <a onClick={() => setMobileMenuOpen(false)} href="#problema" className="text-xl font-bold text-brand-secondary hover:text-brand-primary uppercase tracking-widest">{t('challenges')}</a>
+            <a onClick={() => setMobileMenuOpen(false)} href="#tecnologia" className="text-xl font-bold text-brand-secondary hover:text-brand-primary uppercase tracking-widest">{t('tech')}</a>
+            <a onClick={() => setMobileMenuOpen(false)} href="#autoridade" className="text-xl font-bold text-brand-secondary hover:text-brand-primary uppercase tracking-widest">{t('auth')}</a>
             
             <div className="h-px w-full bg-slate-200 my-4" />
             
             <a onClick={() => setMobileMenuOpen(false)} href="https://wa.me/559891293421" target="_blank" rel="noopener noreferrer" className="inline-flex w-full max-w-sm items-center justify-center px-8 py-4 bg-brand-primary text-white rounded-xl font-bold shadow-lg shadow-brand-primary/30">
-              Falar com Consultor
+              {t('contact')}
             </a>
           </div>
         </div>
@@ -75,12 +170,12 @@ const Index = () => {
           <div className="animate-marquee whitespace-nowrap flex w-max items-center py-2.5 group-hover:[animation-play-state:paused] ease-linear text-[10px] md:text-xs font-bold tracking-widest uppercase">
             {[...Array(3)].map((_, i) => (
               <div key={i} className="flex items-center shrink-0">
-                <span className="px-6 mt-0.5">Cobertura Nacional</span><span className="opacity-40">|</span>
+                <span className="px-6 mt-0.5">{t('coverage')}</span><span className="opacity-40">|</span>
                 <span className="px-6 mt-0.5">☎ 0800 591 9492</span><span className="opacity-40">|</span>
-                <span className="px-6 mt-0.5 flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-green-400"/> Aprovação Garantida na Vistoria Vale</span><span className="opacity-40">|</span>
-                <span className="px-6 mt-0.5 flex items-center gap-2"><ShieldCheck className="w-3.5 h-3.5 text-blue-300"/> Sensor de Fadiga Exclusivo</span><span className="opacity-40">|</span>
-                <span className="px-6 mt-0.5 flex items-center gap-2"><Eye className="w-3.5 h-3.5 text-blue-300"/> Vídeo Telemetria Antidesvio</span><span className="opacity-40">|</span>
-                <span className="px-6 mt-0.5 flex items-center gap-2"><Brain className="w-3.5 h-3.5 text-blue-300"/> Inteligência Artificial</span><span className="opacity-40">|</span>
+                <span className="px-6 mt-0.5 flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-green-400"/> {t('guarantee')}</span><span className="opacity-40">|</span>
+                <span className="px-6 mt-0.5 flex items-center gap-2"><ShieldCheck className="w-3.5 h-3.5 text-blue-300"/> {t('fatigue')}</span><span className="opacity-40">|</span>
+                <span className="px-6 mt-0.5 flex items-center gap-2"><Eye className="w-3.5 h-3.5 text-blue-300"/> {t('videotech')}</span><span className="opacity-40">|</span>
+                <span className="px-6 mt-0.5 flex items-center gap-2"><Brain className="w-3.5 h-3.5 text-blue-300"/> {t('ai')}</span><span className="opacity-40">|</span>
               </div>
             ))}
           </div>
@@ -114,12 +209,12 @@ const Index = () => {
           <div className="max-w-4xl">
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-brand-secondary leading-tight tracking-tighter mb-8 drop-shadow-sm">
-              Sua frota pronta para inspeção. <br className="hidden md:block"/>
-              <span className="text-brand-primary">Sem erro. Sem risco.</span>
+              {t('heroTitle1')} <br className="hidden md:block"/>
+              <span className="text-brand-primary">{t('heroTitle2')}</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-slate-600 mb-12 max-w-2xl leading-relaxed font-light border-l-4 border-brand-primary pl-6 bg-gradient-to-r from-white/60 to-transparent py-4 backdrop-blur-sm rounded-r-2xl">
-              Não vendemos rastreadores. Entregamos <span className="font-semibold text-brand-secondary">controle total</span>, segurança operacional e redução de prejuízos para operações de alto rigor técnico.
+              {t('heroDesc')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-5 items-start">
@@ -131,7 +226,7 @@ const Index = () => {
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                 <span className="relative flex items-center gap-3">
-                  Solicite uma Análise
+                  {t('reqAnalysis')}
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-1.5 transition-transform" />
                 </span>
               </a>
@@ -139,7 +234,7 @@ const Index = () => {
                 href="#tecnologia" 
                 className="inline-flex justify-center items-center gap-2 px-8 py-5 bg-white border border-slate-200 hover:border-brand-primary/30 hover:bg-slate-50 text-brand-secondary font-semibold rounded-2xl transition-all duration-300 shadow-xl pointer-events-auto"
               >
-                Tecnologia Nível Vale
+                {t('valetech')}
               </a>
             </div>
             
