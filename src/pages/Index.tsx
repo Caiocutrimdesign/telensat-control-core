@@ -214,7 +214,6 @@ const Index = () => {
              muted 
              playsInline 
              className="absolute right-0 top-0 w-full h-full object-cover object-right z-10 opacity-90"
-             poster="https://www.telensat.com.br/images/jpg/galeria/11.jpg"
            >
              <source src="/VIDEO/videohero.mp4" type="video/mp4" />
            </video>
