@@ -78,7 +78,7 @@ const Index = () => {
             
             <div className="flex flex-col sm:flex-row gap-5 items-start">
               <a 
-                href="https://wa.me/559891293421" 
+                href="https://wa.me/559891293421?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20da%20minha%20opera%C3%A7%C3%A3o." 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="group relative inline-flex justify-center items-center gap-3 px-10 py-5 bg-gradient-to-r from-cyan-600 to-blue-700 text-white font-bold text-lg rounded-2xl transition-all duration-500 shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:shadow-[0_0_50px_rgba(6,182,212,0.6)] hover:-translate-y-1 overflow-hidden pointer-events-auto"
@@ -296,14 +296,14 @@ const Index = () => {
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              "https://www.telensat.com.br/images/jpg/servicos/1.jpg",
-              "https://www.telensat.com.br/images/jpg/servicos/2.jpg",
-              "https://www.telensat.com.br/images/jpg/servicos/3.jpg",
-              "https://www.telensat.com.br/images/jpg/servicos/4.jpg",
-              "https://www.telensat.com.br/images/jpg/galeria/8.jpg",
-              "https://www.telensat.com.br/images/jpg/galeria/9.jpg",
-              "https://www.telensat.com.br/images/jpg/galeria/15.jpg",
-              "https://www.telensat.com.br/images/jpg/servicos/7.jpg",
+              "https://www.telensat.com.br/images/jpg/galeria/2.jpg",
+              "https://www.telensat.com.br/images/jpg/galeria/5.jpg",
+              "https://www.telensat.com.br/images/jpg/galeria/11.jpg",
+              "https://www.telensat.com.br/images/jpg/galeria/14.jpg",
+              "https://www.telensat.com.br/images/jpg/galeria/17.jpg",
+              "https://www.telensat.com.br/images/jpg/galeria/19.jpg",
+              "https://www.telensat.com.br/images/jpg/galeria/20.jpg",
+              "https://www.telensat.com.br/images/jpg/galeria/21.jpg",
             ].map((src, i) => (
               <div key={i} className="relative group overflow-hidden rounded-2xl aspect-square shadow-xl bg-slate-800 border border-slate-700">
                 <div className="absolute inset-0 bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 mix-blend-overlay" />
@@ -434,10 +434,15 @@ const Index = () => {
           <img src="https://www.telensat.com.br/images/jpg/painel/3/painel03.jpg" alt="Telensat frota resultado" className="w-full h-full object-cover object-center filter grayscale mix-blend-luminosity" />
         </div>
         <div className="container mx-auto px-6 max-w-7xl relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tighter drop-shadow-2xl">O resultado? Sua frota aprovada.</h2>
-          <p className="text-xl text-cyan-100/70 mb-16 max-w-3xl mx-auto font-light">
-            Reduzimos Custo Operacional, blindamos os riscos e formatamos dados para as auditorias mais complexas e hostis da mineração e logística do país.
-          </p>
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <span className="text-cyan-500 font-bold tracking-widest uppercase text-xs mb-3 block">Análise de Redução de Custos</span>
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tighter drop-shadow-2xl">
+              Se você não tem controle total da sua frota, <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-500">você está perdendo dinheiro.</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-cyan-100/70 mb-10 mx-auto font-light leading-relaxed">
+              A Telensat faz uma <strong className="text-white font-semibold">análise completa</strong> da sua operação pesada. Descubra os gargalos invisíveis que estão sugando seu lucro.
+            </p>
+          </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
             <div className="bg-slate-900/60 backdrop-blur-xl p-8 rounded-3xl shadow-2xl border border-slate-800/80">
@@ -458,17 +463,22 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-900/80 to-slate-900/80 backdrop-blur-2xl p-10 md:p-14 rounded-3xl shadow-[0_0_50px_rgba(6,182,212,0.1)] border border-blue-500/30 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 text-left relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/20 blur-[80px] rounded-full pointer-events-none" />
+          <div className="bg-gradient-to-r from-blue-900/30 to-slate-900/80 backdrop-blur-2xl p-10 md:p-14 rounded-3xl shadow-[0_0_50px_rgba(6,182,212,0.1)] border border-blue-500/30 max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 text-center md:text-left relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 blur-[80px] rounded-full pointer-events-none" />
             
-            <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">Escale a gestão operacional hoje.</h3>
-              <p className="text-cyan-100/70 max-w-lg text-lg font-light leading-relaxed">Nossos especialistas estão prontos para dimensionar o projeto exato que sua operação necessita. Padrão enterprise imediato.</p>
+            <div className="relative z-10 flex-1">
+              <h3 className="text-3xl font-extrabold text-white mb-4 tracking-tight">Escale sua inteligência operacional hoje.</h3>
+              <p className="text-slate-300 text-lg font-light leading-relaxed">Nossos especialistas estão prontos para dimensionar o projeto exato de sensoriamento e controle que sua frota necessita.</p>
             </div>
-            <a href="https://wa.me/559891293421" target="_blank" rel="noopener noreferrer" className="relative z-10 shrink-0 inline-flex justify-center items-center gap-3 px-10 py-5 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold text-lg rounded-2xl transition-all duration-500 shadow-[0_0_25px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.5)] hover:-translate-y-1">
-              <PhoneCall className="w-6 h-6" />
-              Falar com Engenheiro
-            </a>
+            <div className="relative z-10 shrink-0 flex flex-col items-center">
+              <a href="https://wa.me/559891293421?text=Ol%C3%A1%21%20Gostaria%20de%20falar%20com%20um%20especialista%20para%20an%C3%A1lise%20da%20minha%20opera%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" className="group shrink-0 inline-flex flex-col justify-center items-center px-10 py-5 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold text-lg rounded-2xl transition-all duration-500 shadow-[0_0_25px_rgba(16,185,129,0.3)] hover:shadow-[0_0_40px_rgba(16,185,129,0.5)] hover:-translate-y-1">
+                <span className="flex items-center gap-3">
+                  <PhoneCall className="w-6 h-6 animate-pulse" />
+                  Fale com um especialista agora
+                </span>
+                <span className="text-[10px] font-medium text-emerald-100 uppercase tracking-[0.2em] mt-2 opacity-80 group-hover:opacity-100">Atendimento Imediato</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -495,7 +505,7 @@ const Index = () => {
 
       {/* Floating CTA */}
       <a 
-        href="https://wa.me/559891293421" 
+        href="https://wa.me/559891293421?text=Ol%C3%A1%21%20Gostaria%20de%20falar%20com%20um%20especialista%20para%20an%C3%A1lise%20da%20minha%20opera%C3%A7%C3%A3o." 
         target="_blank" 
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg shadow-green-500/40 hover:scale-110 transition-transform duration-300 z-50 group"
