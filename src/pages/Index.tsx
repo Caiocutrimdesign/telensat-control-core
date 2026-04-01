@@ -303,83 +303,131 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            {/* 1. SENSOR DE FADIGA */}
-            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300 shadow-xl group">
-              <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform flex-shrink-0">
-                <Brain className="w-6 h-6" />
+            {/* 1. PLATAFORMA */}
+            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 shadow-xl group flex flex-col">
+              <div className="h-64 overflow-hidden relative">
+                <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay z-10" />
+                <img src="https://www.telensat.com.br/images/jpg/servicos/1.jpg" alt="Detecção de Acionamento de Plataforma" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               </div>
-              <h4 className="text-xl font-bold text-white mb-3">Sensor de Fadiga com IA</h4>
-              <p className="text-slate-400 text-sm font-light leading-relaxed">
-                Sistema avançado que detecta sonolência, distração, uso de celular e cigarro. Alertas sonoros na cabine em tempo real para prevenção de acidentes severos.
-              </p>
+              <div className="p-8 flex-1 flex flex-col">
+                <h4 className="text-2xl font-bold text-white mb-4">Detecção de Acionamento de Plataforma</h4>
+                <div className="space-y-3 text-slate-400 text-sm font-light leading-relaxed">
+                  <p>Serviço que integra sensores de acionamento em plataformas de caminhões guincho ao rastreador da Telensat.</p>
+                  <p>Através destes sensores é possível obter relatórios de acionamento da plataforma com data, horário e local onde ela foi acionada.</p>
+                </div>
+              </div>
             </div>
 
-            {/* 2. RASTREADOR SATELITAL */}
-            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300 shadow-xl group">
-              <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform flex-shrink-0">
-                <Satellite className="w-6 h-6" />
+            {/* 2. PORTA BAÚ */}
+            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 shadow-xl group flex flex-col">
+              <div className="h-64 overflow-hidden relative">
+                <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay z-10" />
+                <img src="https://www.telensat.com.br/images/jpg/servicos/2.jpg" alt="Detecção de Abertura de Porta Baú" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               </div>
-              <h4 className="text-xl font-bold text-white mb-3">Rastreamento 100% Satelital</h4>
-              <p className="text-slate-400 text-sm font-light leading-relaxed">
-                Cobertura total no Brasil e América Latina, ideal para zonas rurais e de mineração sem sinal de celular. Operação imune a Jammer (bloqueador de sinal).
-              </p>
+              <div className="p-8 flex-1 flex flex-col">
+                <h4 className="text-2xl font-bold text-white mb-4">Detecção de Abertura de Porta Baú</h4>
+                <div className="space-y-3 text-slate-400 text-sm font-light leading-relaxed">
+                  <p>Serviço que integra sensores de abertura de porta baú de caminhões ou utilitários ao rastreador da Telensat.</p>
+                  <p>Através destes sensores é possível obter relatórios de abertura de portas baú com data, horário e local onde ela foi aberta.</p>
+                </div>
+              </div>
             </div>
 
-            {/* 3. IDENTIFICADOR DE MOTORISTA */}
-            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300 shadow-xl group">
-              <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform flex-shrink-0">
-                <UserCheck className="w-6 h-6" />
+            {/* 3. TEMPERATURA */}
+            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 shadow-xl group flex flex-col">
+              <div className="h-64 overflow-hidden relative">
+                <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay z-10" />
+                <img src="https://www.telensat.com.br/images/jpg/servicos/3.jpg" alt="Monitoramento de Temperatura" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               </div>
-              <h4 className="text-xl font-bold text-white mb-3">Identificação de Motorista</h4>
-              <p className="text-slate-400 text-sm font-light leading-relaxed">
-                Controle de acesso via IButton ou Cartão RFID (Crachá). O veículo só liga com motorista autorizado, registrando toda a jornada e infrações por usuário.
-              </p>
+              <div className="p-8 flex-1 flex flex-col">
+                <h4 className="text-2xl font-bold text-white mb-4">Monitoramento de Temperatura</h4>
+                <div className="space-y-3 text-slate-400 text-sm font-light leading-relaxed">
+                  <p>Serviço de monitoramento de câmaras refrigeradas de caminhões ou containers, que unem sensores de temperatura ao rastreador da Telensat.</p>
+                  <p>As temperaturas são medidas em tempo real através dos sensores, e ao atingir valores fora de padrão definidas pelo usuário, são enviados alertas na tela e por SMS.</p>
+                  <p>Este serviço opcional oferece maior praticidade ao gerenciador de frotas controlar a qualidade da refrigeração de suas cargas.</p>
+                </div>
+              </div>
             </div>
 
-            {/* 4. TEMPERATURA */}
-            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300 shadow-xl group">
-              <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform flex-shrink-0">
-                <Thermometer className="w-6 h-6" />
+            {/* 4. IDENTIFICADOR */}
+            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 shadow-xl group flex flex-col">
+              <div className="h-64 overflow-hidden relative">
+                <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay z-10" />
+                <img src="https://www.telensat.com.br/images/jpg/servicos/4.jpg" alt="Identificador de Motorista" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               </div>
-              <h4 className="text-xl font-bold text-white mb-3">Monitoramento Térmico</h4>
-              <p className="text-slate-400 text-sm font-light leading-relaxed">
-                Para câmaras refrigeradas e containers. Alertas na plataforma e por SMS caso a temperatura saia da faixa ideal definida para preservar a qualidade da carga.
-              </p>
+              <div className="p-8 flex-1 flex flex-col">
+                <h4 className="text-2xl font-bold text-white mb-4">Identificador de Motorista</h4>
+                <div className="space-y-3 text-slate-400 text-sm font-light leading-relaxed">
+                  <p>Serviço de identificação e controle de motoristas online, acoplado ao rastreador da Telensat no veículo.</p>
+                  <p>O controle de acesso é realizado através de Ibuttons ou Smart Card RF-ID, identificando quem deu partida no veículo. A vantagem do Smart Card é que pode ser utilizado como crachá pelo motorista.</p>
+                  <p>Através do identificador, é possível a emissão de relatórios dos veículos utilizados, entregas efetuadas, velocidades excedidas, entre outras funções que auxiliam a gestão de sua frota.</p>
+                </div>
+              </div>
             </div>
 
-            {/* 5. ABERTURA DE PORTA BAÚ */}
-            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300 shadow-xl group">
-              <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform flex-shrink-0">
-                <PackageOpen className="w-6 h-6" />
+            {/* 5. MONITRIIP */}
+            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 shadow-xl group flex flex-col">
+              <div className="h-64 overflow-hidden relative">
+                <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay z-10" />
+                <img src="https://www.telensat.com.br/images/jpg/servicos/5.jpg" alt="Implantação do Sistema Monitriip" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               </div>
-              <h4 className="text-xl font-bold text-white mb-3">Abertura de Porta Baú</h4>
-              <p className="text-slate-400 text-sm font-light leading-relaxed">
-                Sensores de alta precisão registram data, hora e local exato onde as portas do compartimento de carga foram abertas, coibindo furtos e desvios ao longo da rota.
-              </p>
+              <div className="p-8 flex-1 flex flex-col">
+                <h4 className="text-2xl font-bold text-white mb-4">Implantação do Sistema Monitriip</h4>
+                <div className="space-y-3 text-slate-400 text-sm font-light leading-relaxed">
+                  <p>Serviço de implantação do Sistema Monitriip - Monitoramento do Transporte Rodoviário Interestadual e Internacional Coletivo de Passageiros.</p>
+                  <p>A Telensat é uma empresa homologada pela ANTT - Agência Nacional de Transportes Terrestres, a implantar o Sistema Monitriip.</p>
+                  <p>O serviço consiste em enviar dados monitorados do veículo durante a viagem em tempo real, através do rastreador Telensat.</p>
+                </div>
+              </div>
             </div>
 
-            {/* 6. ACIONAMENTO DE PLATAFORMA */}
-            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 hover:bg-slate-800 hover:border-cyan-500/50 transition-all duration-300 shadow-xl group">
-              <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform flex-shrink-0">
-                <Truck className="w-6 h-6" />
+            {/* 6. SENSOR DE FADIGA */}
+            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 shadow-xl group flex flex-col">
+              <div className="h-64 overflow-hidden relative">
+                <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay z-10" />
+                <img src="https://www.telensat.com.br/images/jpg/servicos/6.jpg" alt="Sensor de Fadiga" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               </div>
-              <h4 className="text-xl font-bold text-white mb-3">Controle de Implementos</h4>
-              <p className="text-slate-400 text-sm font-light leading-relaxed">
-                Mapeamento de guinchos e caminhões. Saiba exatamente onde e quando a prancha ou caçamba operou, garantindo total transparência nos serviços prestados.
-              </p>
+              <div className="p-8 flex-1 flex flex-col">
+                <h4 className="text-2xl font-bold text-white mb-4">Sensor de Fadiga</h4>
+                <div className="space-y-3 text-slate-400 text-sm font-light leading-relaxed">
+                  <p>I-VUE permite integração de informações e gestão de comunicação de relatórios com o sistema de telemetria RS 232 gerenciamento frotas, mdvr car, computador embarcado e etc.</p>
+                  <p>Emite alerta ao motorista e ao sistema Telecom Track, quando detecta comportamentos de risco ao volante como: Distração, fadiga, falar ao celular, sonolência e cigarro.</p>
+                  <p>Alerta em tempo real na cabine do motorista, envio de dados para central de monitoramento.</p>
+                  <p>Redução de riscos devido a análise estatísticas dos índices de fadiga e distração, melhoria contínua de estratégia para redução de eventos de fadiga e distração.</p>
+                  <div className="pt-2">
+                    <strong className="text-slate-300 block mb-2">Sete tipos de eventos detectados:</strong>
+                    <ul className="list-decimal pl-5 space-y-1 bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+                      <li>Fechamento de olhos.</li>
+                      <li>Fechamento de olhos mais de 2 segundos.</li>
+                      <li>Distração ao lado (Esquerda, direita ou por abaixo. Demora 3-4 segundos para girar eventos, prevenindo falsos).</li>
+                      <li value="5">Utilizando Celular no ouvido.</li>
+                      <li>Fumando cigarro.</li>
+                      <li>Ausência no lugar.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* 7. MONITRIIP */}
-            <div className="md:col-span-2 lg:col-span-3 bg-gradient-to-r from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-8 hover:border-cyan-500/50 transition-all duration-300 shadow-xl flex flex-col md:flex-row items-center gap-8 group">
-              <div className="w-16 h-16 shrink-0 bg-blue-500/10 rounded-2xl flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
-                <FileCheck className="w-8 h-8" />
+            {/* 7. SMARTONE C - Full Width Bottom */}
+            <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-3xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 shadow-xl group flex flex-col md:col-span-2 lg:col-span-3 lg:flex-row items-center">
+              <div className="h-64 lg:h-full lg:w-2/5 overflow-hidden relative self-stretch">
+                <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay z-10" />
+                <img src="https://www.telensat.com.br/images/jpg/servicos/7.jpg" alt="Rastreador Satelital" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
               </div>
-              <div>
-                <h4 className="text-xl md:text-2xl font-bold text-white mb-3">Implantação do Sistema MONITRIIP</h4>
-                <p className="text-slate-400 text-sm font-light leading-relaxed max-w-4xl">
-                  Empresa homologada oficialmente pela <strong className="text-cyan-400">ANTT (Agência Nacional de Transportes Terrestres)</strong>.
-                  Implantamos o sistema de monitoramento para transporte rodoviário interestadual e internacional de passageiros, enviando os dados da viagem em tempo real diretamente para a agência reguladora, blindando juridicamente a operação da sua frota.
+              <div className="p-8 flex-1 flex flex-col w-full">
+                <h4 className="text-2xl md:text-3xl font-bold text-white mb-4">Rastreador Satelital</h4>
+                <p className="text-slate-400 font-light leading-relaxed mb-6 text-sm md:text-base">
+                  Rastreie veículos, barcos e máquinas agrícolas como solução para melhorar a eficiência e a segurança de suas operações.
                 </p>
+                <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-slate-300">
+                  <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-cyan-500 flex-shrink-0" /> Comunicação 100% Satelital</li>
+                  <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-cyan-500 flex-shrink-0" /> Melhor custo benefício</li>
+                  <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-cyan-500 flex-shrink-0" /> Acesso em LA e Brasil</li>
+                  <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-cyan-500 flex-shrink-0" /> Diversos relatórios gerenciais</li>
+                  <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-cyan-500 flex-shrink-0" /> Segurança ativa nos ativos</li>
+                  <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-cyan-500 flex-shrink-0" /> Imune a Jammer</li>
+                </ul>
               </div>
             </div>
 
