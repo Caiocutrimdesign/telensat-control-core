@@ -1,15 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { 
-  ArrowRight, CheckCircle2, ShieldCheck, Map, Activity, PhoneCall, TrendingDown, Zap, AlertTriangle, Eye, PlayCircle, Menu, X, Thermometer, UserCheck, Satellite, PackageOpen, Truck, FileCheck, Brain, Globe2, ChevronRight, Info, ExternalLink, Cpu, Globe, Database, Lock
+  ShieldCheck, Truck, PackageOpen, Thermometer, UserCheck, FileCheck, Brain, Satellite, 
+  ChevronRight, Info, Languages, LayoutDashboard, Database, Lock, Cpu, Globe, 
+  TrendingDown, AlertTriangle, Fuel, Clock, Headphones, MapPin, 
+  CheckCircle2, Phone, MessageSquare, Play, X, ExternalLink, ArrowRight, Map, Activity, PhoneCall, Zap, Eye, PlayCircle, Menu
 } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Language = "pt" | "en" | "es";
@@ -94,7 +90,6 @@ const Index = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lang, setLang] = useState<Language>("pt");
-  const [selectedService, setSelectedService] = useState<typeof ecosystemServices[0] | null>(null);
 
   const t = (key: keyof typeof translations.pt) => translations[lang][key];
 
@@ -317,13 +312,15 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {ecosystemServices.map((service, idx) => (
-              <motion.div
+              <motion.a
                 key={service.id}
+                href={`/servicos/${service.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                onClick={() => setSelectedService(service)}
                 className={`group cursor-pointer rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border overflow-hidden relative flex flex-col items-center text-center 
                   ${service.color === 'accent' ? 'bg-brand-primary border-blue-800 lg:col-span-2' : 'bg-white border-slate-100'}`}
               >
@@ -338,7 +335,7 @@ const Index = () => {
                         <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-tight">{service.title}</h3>
                         <p className="text-blue-100 text-sm leading-relaxed font-light mb-6">{service.shortDesc}</p>
                         <div className="flex items-center gap-2 text-xs font-bold text-white/80 uppercase tracking-widest bg-white/10 backdrop-blur-md rounded-full px-4 py-2 w-fit mx-auto lg:mx-0">
-                          <Info className="w-4 h-4" /> Ver Detalhes Técnicos
+                          <Info className="w-4 h-4" /> Ver Detalhes Completos
                         </div>
                       </div>
                       <div className="flex-1 w-full lg:w-1/2 h-40 lg:h-48 relative">
@@ -359,117 +356,15 @@ const Index = () => {
                         <img src={service.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt={service.title} />
                       </div>
                       <div className="flex items-center justify-center gap-2 text-[10px] font-bold text-brand-primary uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                        Saiba mais <ChevronRight className="w-3 h-3" />
+                        Clique para explorar <ChevronRight className="w-3 h-3" />
                       </div>
                     </div>
                   </>
                 )}
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>
-
-        <Dialog open={!!selectedService} onOpenChange={(open) => !open && setSelectedService(null)}>
-          <DialogContent className="max-w-4xl p-0 overflow-hidden bg-white border-0 rounded-3xl shadow-2xl">
-            <AnimatePresence>
-              {selectedService && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  className="flex flex-col md:flex-row h-full max-h-[90vh] overflow-y-auto"
-                >
-                  <div className="md:w-1/2 bg-brand-neutral/50 p-10 flex flex-col items-center justify-center relative overflow-hidden border-b md:border-b-0 md:border-r border-slate-100">
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-primary to-blue-400" />
-                    <div className="relative group w-full max-w-sm">
-                      <div className="absolute inset-0 bg-brand-primary/10 rounded-3xl blur-3xl opacity-50" />
-                      <img 
-                        src={selectedService.img} 
-                        alt={selectedService.title} 
-                        className="relative z-10 w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" 
-                      />
-                    </div>
-                    <div className="mt-12 w-full space-y-4">
-                      <h4 className="text-xs font-black text-brand-primary uppercase tracking-[0.2em] text-center md:text-left">Especificações Técnicas</h4>
-                      <div className="grid grid-cols-1 gap-2">
-                        {selectedService.specs.map((spec, i) => (
-                          <div key={i} className="flex items-center gap-3 bg-white p-3 rounded-xl border border-slate-100 shadow-sm">
-                            <CheckCircle2 className="w-4 h-4 text-brand-primary" />
-                            <span className="text-sm font-semibold text-brand-secondary">{spec}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="md:w-1/2 p-10 md:p-14 bg-white">
-                    <DialogHeader className="mb-8">
-                      <div className="flex items-center gap-3 text-brand-primary font-bold mb-4">
-                        <selectedService.icon className="w-6 h-6 border-b-2 border-brand-primary pb-1" />
-                        <span className="text-xs uppercase tracking-widest">Documentação Técnica</span>
-                      </div>
-                      <DialogTitle className="text-3xl md:text-4xl font-extrabold text-brand-secondary tracking-tight leading-tight mb-4">
-                        {selectedService.title}
-                      </DialogTitle>
-                      <DialogDescription className="text-lg text-slate-500 font-light leading-relaxed">
-                        Solução integrada de alta precisão para operações logísticas críticas.
-                      </DialogDescription>
-                    </DialogHeader>
-
-                    <div className="space-y-8">
-                      <div className="prose prose-slate prose-lg max-w-none">
-                        <p className="text-slate-700 leading-relaxed font-light">
-                          {selectedService.details}
-                        </p>
-                      </div>
-
-                      <div className="pt-8 border-t border-slate-100 flex flex-col gap-6">
-                        <div className="grid grid-cols-2 gap-4">
-                          <div className="flex flex-col gap-1 p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <div className="flex items-center gap-2 text-brand-primary">
-                              <Cpu className="w-4 h-4" />
-                              <span className="text-[10px] font-black uppercase tracking-widest">Hardware</span>
-                            </div>
-                            <span className="text-xs font-medium text-slate-600">Embarcado</span>
-                          </div>
-                          <div className="flex flex-col gap-1 p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <div className="flex items-center gap-2 text-brand-primary">
-                              <Globe className="w-4 h-4" />
-                              <span className="text-[10px] font-black uppercase tracking-widest">Cloud</span>
-                            </div>
-                            <span className="text-xs font-medium text-slate-600">Tempo Real</span>
-                          </div>
-                          <div className="flex flex-col gap-1 p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <div className="flex items-center gap-2 text-brand-primary">
-                              <Database className="w-4 h-4" />
-                              <span className="text-[10px] font-black uppercase tracking-widest">Backup</span>
-                            </div>
-                            <span className="text-xs font-medium text-slate-600">12 Meses</span>
-                          </div>
-                          <div className="flex flex-col gap-1 p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <div className="flex items-center gap-2 text-brand-primary">
-                              <Lock className="w-4 h-4" />
-                              <span className="text-[10px] font-black uppercase tracking-widest">Segurança</span>
-                            </div>
-                            <span className="text-xs font-medium text-slate-600">Nível Bancário</span>
-                          </div>
-                        </div>
-
-                        <a 
-                          href="https://wa.me/559891293421"
-                          className="w-full py-5 bg-brand-primary text-white rounded-2xl font-bold text-lg hover:bg-brand-secondary transition-all duration-300 shadow-xl shadow-brand-primary/20 flex items-center justify-center gap-3 group"
-                        >
-                          Solicitar Diagnóstico Técnico
-                          <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </DialogContent>
-        </Dialog>
       </section>
 
       {/* Problem Section */}
