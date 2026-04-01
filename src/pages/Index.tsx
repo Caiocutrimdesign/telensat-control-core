@@ -170,7 +170,7 @@ const Index = () => {
                 key={`logo-${i}`}
                 src={src}
                 alt="Parceiro"
-                className="h-8 md:h-12 w-auto min-w-[100px] max-w-[140px] px-8 object-contain flex-shrink-0 opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-xl transition-all duration-300 filter hover:brightness-110 contrast-125"
+                className="h-8 md:h-12 w-auto min-w-[100px] max-w-[140px] px-8 object-contain flex-shrink-0 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 hover:scale-110 hover:drop-shadow-xl transition-all duration-500 filter hover:brightness-110 contrast-125"
               />
             ))}
           </div>
