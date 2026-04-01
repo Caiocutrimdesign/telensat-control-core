@@ -73,14 +73,14 @@ const Index = () => {
         <div className="absolute inset-0 z-0">
            {/* Light futuristic Grid overlay */}
            <div className="absolute inset-0 bg-[linear-gradient(to_right,#004A9910_1px,transparent_1px),linear-gradient(to_bottom,#004A9910_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] z-20 pointer-events-none" />
-           <div className="absolute inset-0 bg-gradient-to-r from-brand-neutral via-brand-neutral/90 to-transparent z-20" />
-           <div className="absolute inset-0 bg-gradient-to-t from-brand-neutral via-transparent to-brand-neutral/50 z-20" />
+           <div className="absolute inset-0 bg-gradient-to-r from-brand-neutral/95 via-brand-neutral/70 to-brand-neutral/10 z-20" />
+           <div className="absolute inset-0 bg-gradient-to-t from-brand-neutral via-transparent to-brand-neutral/20 z-20" />
            
            {/* Ambient Glows Light */}
-           <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[120px] mix-blend-multiply pointer-events-none z-10 animate-pulse-glow" />
-           <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[150px] mix-blend-multiply pointer-events-none z-10" />
+           <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-brand-primary/15 rounded-full blur-[120px] mix-blend-multiply pointer-events-none z-10 animate-pulse-glow" />
+           <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-brand-primary/10 rounded-full blur-[150px] mix-blend-multiply pointer-events-none z-10" />
 
-           <img src="https://www.telensat.com.br/images/jpg/galeria/11.jpg" alt="Telensat tecnologia automotiva" className="absolute right-0 top-0 w-full h-full object-cover object-right scale-105 opacity-15 mix-blend-multiply z-10 grayscale" />
+           <img src="https://www.telensat.com.br/images/jpg/galeria/11.jpg" alt="Telensat tecnologia automotiva" className="absolute right-0 top-0 w-full h-full object-cover object-right scale-105 opacity-30 mix-blend-multiply z-10 grayscale-[50%]" />
         </div>
         
         <div className="container relative z-30 mx-auto px-6 max-w-7xl animate-fade-in">
@@ -603,8 +603,8 @@ const Index = () => {
       {/* Results / CTA Final */}
       <section id="prova" className="py-32 relative overflow-hidden bg-brand-primary text-white border-t border-blue-900">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/95 to-brand-primary/80 z-10" />
-          <img src="https://www.telensat.com.br/images/jpg/painel/3/painel03.jpg" alt="Telensat frota resultado" className="w-full h-full object-cover object-center filter grayscale mix-blend-multiply opacity-40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/95 via-brand-primary/40 to-brand-primary/20 z-10" />
+          <img src="https://www.telensat.com.br/images/jpg/painel/3/painel03.jpg" alt="Telensat frota resultado" className="w-full h-full object-cover object-center filter grayscale-[30%] mix-blend-multiply opacity-80" />
         </div>
         <div className="container mx-auto px-6 max-w-7xl relative z-10 text-center">
           <div className="max-w-4xl mx-auto text-center mb-16">
