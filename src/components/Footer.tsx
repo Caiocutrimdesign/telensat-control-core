@@ -11,6 +11,9 @@ const Footer = () => {
             <p className="text-primary-foreground/40 text-sm">
               © {new Date().getFullYear()} Telensat. Todos os direitos reservados.
             </p>
+            <p className="text-primary-foreground/40 text-xs mt-1">
+              Desenvolvido por Lovable
+            </p>
           </div>
           <div className="text-right">
             <a href="tel:+559833044692" className="text-primary-foreground/50 hover:text-primary-foreground/80 text-sm transition-colors block">

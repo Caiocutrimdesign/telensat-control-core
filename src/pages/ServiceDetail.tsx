@@ -218,7 +218,8 @@ const ServiceDetail = () => {
       <footer className="bg-brand-neutral py-12 border-t border-slate-100">
         <div className="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-8 opacity-50">
           <img src="https://www.telensat.com.br/images/png/logo.png" alt="Telensat" className="h-6 grayscale" />
-          <p className="text-xs font-medium text-slate-500 uppercase tracking-widest">© 2026 Telensat Control. Todos os direitos reservados.</p>
+          <p className="text-xs font-medium text-slate-500 uppercase tracking-widest">© 2026 Lovable. Todos os direitos reservados.</p>
+          <p className="text-xs text-slate-400">Desenvolvido por Lovable</p>
         </div>
       </footer>
     </div>
