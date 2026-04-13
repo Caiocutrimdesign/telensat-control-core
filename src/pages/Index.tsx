@@ -692,7 +692,7 @@ const Index = () => {
           <div className="text-sm">
             © 2026 Telensat. Todos os direitos reservados.
             <br />
-            <span className="text-xs">Desenvolvido por Telensat.</span>
+            <span className="text-xs">Desenvolvido por Facilit Corp.</span>
           </div>
           <div className="flex items-center gap-6 text-sm font-medium">
              Suporte: <a href="tel:9833044692" className="hover:text-brand-primary transition-colors">(98) 3304-4692</a>
