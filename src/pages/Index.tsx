@@ -690,7 +690,7 @@ const Index = () => {
             />
           </div>
           <div className="text-sm">
-            © 2026 Facilit Corp. Todos os direitos reservados.
+            © 2026 Telensat. Todos os direitos reservados.
             <br />
             <span className="text-xs">Desenvolvido por Facilit Corp.</span>
           </div>

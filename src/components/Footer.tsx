@@ -9,7 +9,7 @@ const Footer = () => {
           </div>
           <div className="text-center">
             <p className="text-primary-foreground/40 text-sm">
-              © {new Date().getFullYear()} Facilit Corp. Todos os direitos reservados.
+              © {new Date().getFullYear()} Telensat. Todos os direitos reservados.
             </p>
             <p className="text-primary-foreground/40 text-xs mt-1">
               Desenvolvido por Facilit Corp.
