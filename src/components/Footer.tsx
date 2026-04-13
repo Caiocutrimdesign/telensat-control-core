@@ -12,7 +12,7 @@ const Footer = () => {
               © {new Date().getFullYear()} Telensat. Todos os direitos reservados.
             </p>
             <p className="text-primary-foreground/40 text-xs mt-1">
-              Desenvolvido por Facilit Corp.
+              Desenvolvido por Telensat.
             </p>
           </div>
           <div className="text-right">
