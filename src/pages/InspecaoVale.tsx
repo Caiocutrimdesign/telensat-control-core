@@ -151,7 +151,7 @@ const InspecaoVale = () => {
 
       {/* Shared Footer Minimalista */}
       <footer className="bg-white text-slate-500 py-8 border-t border-slate-200 text-center">
-        <p className="text-sm font-medium">© 2026 Lovable. Engenharia em Aplicação. Todos os direitos reservados.</p>
+        <p className="text-sm font-medium">© 2026 Facilit Corp. Engenharia em Aplicação. Todos os direitos reservados.</p>
         <p className="text-xs mt-1">Desenvolvido por Facilit Corp.</p>
       </footer>
     </div>
