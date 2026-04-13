@@ -136,20 +136,20 @@ const Index = () => {
       </div>
 
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'top-0 bg-white/95 backdrop-blur-md shadow-sm py-4 border-b border-slate-100' : 'top-0 md:top-[38px] bg-white/95 backdrop-blur-md shadow-sm py-5 border-b border-slate-200/50'}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'top-0 bg-white/95 backdrop-blur-md shadow-sm py-4 border-b border-slate-100' : 'top-0 md:top-[38px] bg-transparent shadow-none py-5'}`}>
         <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between pointer-events-auto">
           <div className="flex items-center gap-2 relative z-50">
             <img 
               src="https://www.telensat.com.br/images/png/logo.png" 
               alt="Telensat Logo" 
-              className={`h-10 transition-all duration-300 ${(mobileMenuOpen && !scrolled) ? 'brightness-0 invert' : ''}`}
+              className={`h-10 transition-all duration-300 ${scrolled ? '' : 'brightness-0 invert'}`}
             />
           </div>
           
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#problema" className="text-brand-secondary hover:text-brand-primary transition-colors">{t('challenges')}</a>
-            <a href="#tecnologia" className="text-brand-secondary hover:text-brand-primary transition-colors">{t('tech')}</a>
-            <a href="#autoridade" className="text-brand-secondary hover:text-brand-primary transition-colors">{t('auth')}</a>
+          <div className={`hidden md:flex items-center gap-8 text-sm font-medium ${scrolled ? 'text-brand-secondary' : 'text-white'}`}>
+            <a href="#problema" className={`hover:text-brand-primary transition-colors ${scrolled ? 'text-brand-secondary' : 'text-white'}`}>{t('challenges')}</a>
+            <a href="#tecnologia" className={`hover:text-brand-primary transition-colors ${scrolled ? 'text-brand-secondary' : 'text-white'}`}>{t('tech')}</a>
+            <a href="#autoridade" className={`hover:text-brand-primary transition-colors ${scrolled ? 'text-brand-secondary' : 'text-white'}`}>{t('auth')}</a>
           </div>
           
           <a 
